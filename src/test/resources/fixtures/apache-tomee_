@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <title>Index of /repositories/releases-tomitribe/org/apache/tomee/apache-tomee</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link rel="icon" type="image/png" href="https://nexus.example/favicon.png">
+    <!--[if IE]>
+    <link rel="SHORTCUT ICON" href="https://nexus.example/favicon.ico"/>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://nexus.example/static/css/Sonatype-content.css?2.14.19-01" type="text/css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <h1>Index of /repositories/releases-tomitribe/org/apache/tomee/apache-tomee</h1>
+    <table cellspacing="10">
+      <tr>
+        <th align="left">Name</th>
+        <th>Last Modified</th>
+        <th>Size</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><a href="../">Parent Directory</a></td>
+      </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.1-SP.1/">7.0.1-SP.1/</a></td>
+            <td>Sat Aug 27 23:19:38 UTC 2022</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.1-SP.5/">7.0.1-SP.5/</a></td>
+            <td>Sat Aug 27 23:19:49 UTC 2022</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/">7.0.10-TT.18/</a></td>
+            <td>Fri Mar 03 19:37:07 UTC 2023</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.7/">7.0.10-TT.7/</a></td>
+            <td>Sat Aug 27 23:20:25 UTC 2022</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/8.0.9-TT.7/">8.0.9-TT.7/</a></td>
+            <td>Sat Aug 27 23:28:05 UTC 2022</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/8.0.9-TT.8/">8.0.9-TT.8/</a></td>
+            <td>Sat Aug 27 23:28:13 UTC 2022</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/9.0.1-TT.1/">9.0.1-TT.1/</a></td>
+            <td>Thu Mar 16 22:36:02 UTC 2023</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/9.0.1-TT.2/">9.0.1-TT.2/</a></td>
+            <td>Fri Mar 24 00:30:42 UTC 2023</td>
+            <td align="right">
+                              &nbsp;
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/maven-metadata.xml">maven-metadata.xml</a></td>
+            <td>Thu Apr 06 20:24:49 UTC 2023</td>
+            <td align="right">
+                              5203
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/maven-metadata.xml.md5">maven-metadata.xml.md5</a></td>
+            <td>Thu Apr 06 20:24:49 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/maven-metadata.xml.sha1">maven-metadata.xml.sha1</a></td>
+            <td>Thu Apr 06 20:24:49 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/maven-metadata.xml.sha256">maven-metadata.xml.sha256</a></td>
+            <td>Thu Apr 06 20:24:49 UTC 2023</td>
+            <td align="right">
+                              64
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/maven-metadata.xml.sha512">maven-metadata.xml.sha512</a></td>
+            <td>Thu Apr 06 20:24:49 UTC 2023</td>
+            <td align="right">
+                              128
+                          </td>
+            <td></td>
+          </tr>
+            </table>
+  </body>
+</html>

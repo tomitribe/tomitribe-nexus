@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <title>Index of /repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link rel="icon" type="image/png" href="https://nexus.example/favicon.png">
+    <!--[if IE]>
+    <link rel="SHORTCUT ICON" href="https://nexus.example/favicon.ico"/>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://nexus.example/static/css/Sonatype-content.css?2.14.19-01" type="text/css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <h1>Index of /repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18</h1>
+    <table cellspacing="10">
+      <tr>
+        <th align="left">Name</th>
+        <th>Last Modified</th>
+        <th>Size</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><a href="../">Parent Directory</a></td>
+      </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plume.tar.gz">apache-tomee-7.0.10-TT.18-plume.tar.gz</a></td>
+            <td>Fri Mar 03 18:58:59 UTC 2023</td>
+            <td align="right">
+                              66661996
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plume.tar.gz.md5">apache-tomee-7.0.10-TT.18-plume.tar.gz.md5</a></td>
+            <td>Fri Mar 03 18:59:04 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plume.tar.gz.sha1">apache-tomee-7.0.10-TT.18-plume.tar.gz.sha1</a></td>
+            <td>Fri Mar 03 18:59:04 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plume.zip">apache-tomee-7.0.10-TT.18-plume.zip</a></td>
+            <td>Fri Mar 03 18:58:54 UTC 2023</td>
+            <td align="right">
+                              66950623
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plume.zip.md5">apache-tomee-7.0.10-TT.18-plume.zip.md5</a></td>
+            <td>Fri Mar 03 18:58:59 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plume.zip.sha1">apache-tomee-7.0.10-TT.18-plume.zip.sha1</a></td>
+            <td>Fri Mar 03 18:58:59 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plus.tar.gz">apache-tomee-7.0.10-TT.18-plus.tar.gz</a></td>
+            <td>Fri Mar 03 18:58:49 UTC 2023</td>
+            <td align="right">
+                              59631251
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plus.tar.gz.md5">apache-tomee-7.0.10-TT.18-plus.tar.gz.md5</a></td>
+            <td>Fri Mar 03 18:58:54 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plus.tar.gz.sha1">apache-tomee-7.0.10-TT.18-plus.tar.gz.sha1</a></td>
+            <td>Fri Mar 03 18:58:54 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plus.zip">apache-tomee-7.0.10-TT.18-plus.zip</a></td>
+            <td>Fri Mar 03 18:58:42 UTC 2023</td>
+            <td align="right">
+                              59921802
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plus.zip.md5">apache-tomee-7.0.10-TT.18-plus.zip.md5</a></td>
+            <td>Fri Mar 03 18:58:48 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-plus.zip.sha1">apache-tomee-7.0.10-TT.18-plus.zip.sha1</a></td>
+            <td>Fri Mar 03 18:58:48 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-webprofile.tar.gz">apache-tomee-7.0.10-TT.18-webprofile.tar.gz</a></td>
+            <td>Fri Mar 03 18:58:39 UTC 2023</td>
+            <td align="right">
+                              38919963
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-webprofile.tar.gz.md5">apache-tomee-7.0.10-TT.18-webprofile.tar.gz.md5</a></td>
+            <td>Fri Mar 03 18:58:42 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-webprofile.tar.gz.sha1">apache-tomee-7.0.10-TT.18-webprofile.tar.gz.sha1</a></td>
+            <td>Fri Mar 03 18:58:42 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-webprofile.zip">apache-tomee-7.0.10-TT.18-webprofile.zip</a></td>
+            <td>Fri Mar 03 18:58:36 UTC 2023</td>
+            <td align="right">
+                              39213170
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-webprofile.zip.md5">apache-tomee-7.0.10-TT.18-webprofile.zip.md5</a></td>
+            <td>Fri Mar 03 18:58:39 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18-webprofile.zip.sha1">apache-tomee-7.0.10-TT.18-webprofile.zip.sha1</a></td>
+            <td>Fri Mar 03 18:58:39 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18.jar">apache-tomee-7.0.10-TT.18.jar</a></td>
+            <td>Fri Mar 03 18:58:36 UTC 2023</td>
+            <td align="right">
+                              11856
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18.jar.md5">apache-tomee-7.0.10-TT.18.jar.md5</a></td>
+            <td>Fri Mar 03 18:58:36 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18.jar.sha1">apache-tomee-7.0.10-TT.18.jar.sha1</a></td>
+            <td>Fri Mar 03 18:58:36 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18.pom">apache-tomee-7.0.10-TT.18.pom</a></td>
+            <td>Fri Mar 03 18:58:36 UTC 2023</td>
+            <td align="right">
+                              16114
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18.pom.md5">apache-tomee-7.0.10-TT.18.pom.md5</a></td>
+            <td>Fri Mar 03 18:58:36 UTC 2023</td>
+            <td align="right">
+                              32
+                          </td>
+            <td></td>
+          </tr>
+                  <tr>
+            <td><a href="https://nexus.example/content/repositories/releases-tomitribe/org/apache/tomee/apache-tomee/7.0.10-TT.18/apache-tomee-7.0.10-TT.18.pom.sha1">apache-tomee-7.0.10-TT.18.pom.sha1</a></td>
+            <td>Fri Mar 03 18:58:36 UTC 2023</td>
+            <td align="right">
+                              40
+                          </td>
+            <td></td>
+          </tr>
+            </table>
+  </body>
+</html>

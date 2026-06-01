@@ -1,0 +1,114 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.tomitribe.nexus;
+
+import org.apache.http.Header;
+import org.apache.http.HttpResponse;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
+
+/**
+ * The one switching state: a path whose kind is not yet known — minted by
+ * {@code resolve(name)} or {@code getPath(...)}, where no listing has told us whether
+ * the target is a file, a directory, or absent.
+ *
+ * <p>On first behavioral access it resolves itself with a single HEAD and atomically
+ * adopts a concrete delegate ({@link NexusDir}, {@link NexusFile}, or
+ * {@link NexusMissing}), caching it so the request happens at most once. Its identity
+ * (segments) never changes — only the learned kind — so {@code equals}/{@code hashCode}
+ * stay stable, exactly as jaws' {@code Unknown -> Metadata|NewObject} transition.
+ *
+ * <p>The resolved delegate is observable via {@link #state()} so tests can assert the
+ * transition (see {@code NexusAsserts}).
+ */
+final class NexusUnknown extends NexusPath {
+
+    private final AtomicReference<NexusPath> resolved = new AtomicReference<>();
+
+    NexusUnknown(final NexusFileSystem fs, final List<String> names, final boolean absolute) {
+        super(fs, names, absolute);
+    }
+
+    @Override
+    boolean directory() {
+        // Unknown until resolved; the wire URI probes without a trailing slash.
+        return false;
+    }
+
+    @Override
+    NexusPath sameKindAt(final List<String> names, final boolean absolute) {
+        return new NexusUnknown(fs, names, absolute);
+    }
+
+    private NexusPath resolve() throws IOException {
+        final NexusPath current = resolved.get();
+        if (current != null) return current;
+
+        final HttpResponse head = fs.client().head(toRemoteUri());
+        final int status = head.getStatusLine().getStatusCode();
+
+        final NexusPath discovered;
+        if (status == 404) {
+            discovered = new NexusMissing(fs, names, absolute);
+        } else if (isHtml(head)) {
+            discovered = new NexusDir(fs, names, absolute);
+        } else {
+            discovered = new NexusFile(fs, names, absolute, contentLength(head));
+        }
+
+        resolved.compareAndSet(null, discovered);
+        return resolved.get();
+    }
+
+    private static boolean isHtml(final HttpResponse response) {
+        final Header header = response.getFirstHeader("Content-Type");
+        return header != null && header.getValue() != null && header.getValue().contains("text/html");
+    }
+
+    private static Long contentLength(final HttpResponse response) {
+        final Header header = response.getFirstHeader("Content-Length");
+        if (header == null) return null;
+        return Long.parseLong(header.getValue());
+    }
+
+    @Override
+    InputStream openStream() throws IOException {
+        return resolve().openStream();
+    }
+
+    @Override
+    List<NexusPath> listChildren() throws IOException {
+        return resolve().listChildren();
+    }
+
+    @Override
+    BasicFileAttributes attributes() throws IOException {
+        return resolve().attributes();
+    }
+
+    @Override
+    void checkExists() throws IOException {
+        resolve().checkExists();
+    }
+
+    @Override
+    String state() {
+        final NexusPath current = resolved.get();
+        return current == null ? "unresolved" : current.state();
+    }
+}

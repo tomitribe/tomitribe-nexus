@@ -1,0 +1,5 @@
+<project>
+  <groupId>org.apache.tomee</groupId>
+  <artifactId>apache-tomee</artifactId>
+  <version>9.0.1-TT.2</version>
+</project>
