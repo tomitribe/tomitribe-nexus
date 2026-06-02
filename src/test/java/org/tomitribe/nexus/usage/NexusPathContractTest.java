@@ -13,11 +13,14 @@
  */
 package org.tomitribe.nexus.usage;
 
+import com.google.common.jimfs.Configuration;
+import com.google.common.jimfs.Jimfs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.tomitribe.nexus.Nexus;
 
 import java.net.URI;
+import java.nio.file.FileSystem;
 import java.nio.file.Path;
 import java.nio.file.ProviderMismatchException;
 
@@ -63,6 +66,28 @@ public class NexusPathContractTest {
     @Test
     public void resolveAbsoluteForeignIsRejected() {
         assertThrows(ProviderMismatchException.class, () -> root.resolve(Path.of("/etc/passwd")));
+    }
+
+    @Test
+    public void resolvesARelativePathFromAWindowsProvider() throws Exception {
+        // A user on Windows builds Path.of("org/apache/tomee/apache-tomee/"); the default provider
+        // converts it to backslash separators. Jimfs gives us that exact provider on any OS.
+        try (FileSystem windows = Jimfs.newFileSystem(Configuration.windows())) {
+            final Path winRelative = windows.getPath("org/apache/tomee/apache-tomee/");
+
+            // It really is a backslash-separated, foreign, relative path.
+            assertEquals("org\\apache\\tomee\\apache-tomee", winRelative.toString());
+            assertFalse(winRelative.isAbsolute());
+
+            // We adopt name elements, not toString(), so the separator is irrelevant — it resolves.
+            final Path resolved = root.resolve(winRelative);
+            assertEquals("/org/apache/tomee/apache-tomee", resolved.toString());
+            assertType(resolved, "unresolved");
+
+            // startsWith/endsWith go through the same segment path, so they work too.
+            assertTrue(resolved.startsWith(windows.getPath("org/apache")));
+            assertTrue(resolved.endsWith(windows.getPath("apache-tomee")));
+        }
     }
 
     @Test
