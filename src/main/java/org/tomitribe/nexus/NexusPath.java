@@ -70,9 +70,6 @@ abstract class NexusPath implements Path {
 
     abstract void checkExists() throws IOException;
 
-    /** Current state name, used by tests to observe the {@link NexusUnknown} transition. */
-    abstract String state();
-
     /** True when this path addresses a directory — drives the trailing slash on the wire. */
     abstract boolean directory();
 
@@ -147,19 +144,49 @@ abstract class NexusPath implements Path {
 
     @Override
     public boolean startsWith(final Path other) {
-        final NexusPath o = cast(other);
-        return o.names.size() <= names.size() && names.subList(0, o.names.size()).equals(o.names);
+        if (other == null) return false;
+        if (other.isAbsolute()) {
+            // An absolute prefix must be a path of this same filesystem; another provider's
+            // root is not our root.
+            if (!absolute || !(other instanceof NexusPath o) || o.fs != this.fs) return false;
+            return o.names.size() <= names.size() && names.subList(0, o.names.size()).equals(o.names);
+        }
+        // A relative path is just segments, whatever produced it: does this path begin with them?
+        final List<String> o = segments(other);
+        return o.size() <= names.size() && names.subList(0, o.size()).equals(o);
     }
 
     @Override
     public boolean endsWith(final Path other) {
-        final NexusPath o = cast(other);
-        return o.names.size() <= names.size()
-                && names.subList(names.size() - o.names.size(), names.size()).equals(o.names);
+        if (other == null) return false;
+        if (other.isAbsolute()) {
+            // An absolute suffix matches only an identical path of this same filesystem.
+            if (!absolute || !(other instanceof NexusPath o) || o.fs != this.fs) return false;
+            return names.equals(o.names);
+        }
+        // A relative path is just segments: does this path end with them? (org/apache/tomee endsWith tomee)
+        final List<String> o = segments(other);
+        return o.size() <= names.size() && names.subList(names.size() - o.size(), names.size()).equals(o);
+    }
+
+    /** A path's name segments as plain strings — for a foreign path, by iterating its name elements. */
+    private static List<String> segments(final Path path) {
+        if (path instanceof NexusPath o) return o.names;
+        final List<String> result = new ArrayList<>();
+        for (final Path element : path) {
+            final String name = element.toString();
+            if (!name.isEmpty()) result.add(name);
+        }
+        return result;
     }
 
     @Override
     public Path normalize() {
+        return sameKindAt(normalizeNames(names), absolute);
+    }
+
+    /** Remove {@code .} and clamp {@code ..} at root (chroot) — shared by the state overrides. */
+    static List<String> normalizeNames(final List<String> names) {
         final List<String> result = new ArrayList<>();
         for (final String name : names) {
             if (name.equals(".")) continue;
@@ -170,15 +197,33 @@ abstract class NexusPath implements Path {
             }
             result.add(name);
         }
-        return sameKindAt(result, absolute);
+        return result;
     }
 
     @Override
     public Path resolve(final Path other) {
-        final NexusPath o = cast(other);
-        if (o.absolute) return o;
+        Objects.requireNonNull(other, "other");
+        if (other.isAbsolute()) {
+            // An absolute path is adoptable only if it is already ours; another provider's
+            // (or another Nexus filesystem's) root has no meaning here.
+            if (other instanceof NexusPath o && o.fs == this.fs) {
+                return o;
+            }
+            throw new java.nio.file.ProviderMismatchException(
+                    "cannot resolve an absolute path from another provider: " + other);
+        }
+        // A relative path is just a sequence of name segments — whatever provider produced it.
+        // So a Path.of("org/apache/tomee") built with the ordinary NIO API resolves cleanly
+        // against a Nexus path. Iterate name elements (never toString the whole path) so the
+        // platform separator is irrelevant. This is a deliberate convenience beyond the strict
+        // JDK provider behaviour, and the whole point of speaking java.nio.file.Path.
         final List<String> result = new ArrayList<>(names);
-        result.addAll(o.names);
+        for (final Path segment : other) {
+            final String name = segment.toString();
+            if (!name.isEmpty()) {
+                result.add(name);
+            }
+        }
         // A freshly appended terminal name is of unknown kind — the one switching case.
         return unknownAt(result, absolute);
     }
@@ -191,6 +236,7 @@ abstract class NexusPath implements Path {
 
     @Override
     public Path relativize(final Path other) {
+        Objects.requireNonNull(other, "other");
         final NexusPath o = cast(other);
         if (!o.startsWith(this)) {
             throw new IllegalArgumentException("relativize supports descendants only: " + o);
@@ -209,7 +255,10 @@ abstract class NexusPath implements Path {
     }
 
     @Override
-    public Path toRealPath(final LinkOption... options) {
+    public Path toRealPath(final LinkOption... options) throws IOException {
+        // Honest "resolve to the real, existing path": force resolution (Unknown does a HEAD),
+        // throw NoSuchFileException if it doesn't exist, and return the concrete resolved kind.
+        checkExists();
         return normalize();
     }
 
@@ -230,7 +279,12 @@ abstract class NexusPath implements Path {
 
     @Override
     public int compareTo(final Path other) {
-        return toString().compareTo(other.toString());
+        Objects.requireNonNull(other, "other");
+        // Contract: comparing across providers is a ClassCastException, not a plausible-but-meaningless answer.
+        if (!(other instanceof NexusPath o) || o.fs != this.fs) {
+            throw new ClassCastException("Path is associated with a different provider: " + other);
+        }
+        return toString().compareTo(o.toString());
     }
 
     @Override

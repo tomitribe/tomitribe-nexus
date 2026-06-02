@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -31,10 +32,13 @@ import java.util.List;
 final class NexusFile extends NexusPath {
 
     private final Long size;
+    private final Instant modified;
 
-    NexusFile(final NexusFileSystem fs, final List<String> names, final boolean absolute, final Long size) {
+    NexusFile(final NexusFileSystem fs, final List<String> names, final boolean absolute,
+              final Long size, final Instant modified) {
         super(fs, names, absolute);
         this.size = size;
+        this.modified = modified;
     }
 
     @Override
@@ -44,7 +48,8 @@ final class NexusFile extends NexusPath {
 
     @Override
     NexusPath sameKindAt(final List<String> names, final boolean absolute) {
-        return new NexusFile(fs, names, absolute, null);
+        // A derived path (getFileName/subpath) is a different entity — its size/date are unknown.
+        return new NexusFile(fs, names, absolute, null, null);
     }
 
     @Override
@@ -63,16 +68,11 @@ final class NexusFile extends NexusPath {
 
     @Override
     BasicFileAttributes attributes() {
-        return new NexusAttributes(false, size, this);
+        return new NexusAttributes(false, size, modified, this);
     }
 
     @Override
     void checkExists() {
         // Produced from a listing; existence is implied. A cold HEAD could confirm.
-    }
-
-    @Override
-    String state() {
-        return "NexusFile";
     }
 }

@@ -16,6 +16,7 @@ package org.tomitribe.nexus;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 
@@ -59,8 +60,13 @@ final class NexusMissing extends NexusPath {
         throw new NoSuchFileException(toString());
     }
 
+    /**
+     * Keep the missing kind. {@code normalize()} preserves the same path (just tidied), so a
+     * resolved-to-missing handle stays observably {@code NexusMissing} — unlike {@link #sameKindAt}
+     * (used by getFileName/subpath), which derives a <em>different</em> path of unknown kind.
+     */
     @Override
-    String state() {
-        return "NexusMissing";
+    public Path normalize() {
+        return new NexusMissing(fs, normalizeNames(names), absolute);
     }
 }

@@ -13,6 +13,7 @@
  */
 package org.tomitribe.nexus;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,14 +23,40 @@ import java.net.URI;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Serves the HTML directory-listing fixtures, requiring Basic auth (snoopy/woodstock).
  * A plain {@link HttpServlet}, no JAX-RS. The request path is mapped to a classpath
  * fixture, and {@code https://nexus.example} in the listing is rewritten to the live
  * test host. {@code doHead} falls through to {@code doGet} via the servlet contract.
+ *
+ * <p>Counts HEAD and GET requests so a black-box test can observe real HTTP traffic —
+ * e.g. that resolution HEADs at most once and that walking a tree never HEADs a file.
  */
 public class Foo extends HttpServlet {
+
+    private final AtomicInteger heads = new AtomicInteger();
+    private final AtomicInteger gets = new AtomicInteger();
+
+    public int heads() {
+        return heads.get();
+    }
+
+    public int gets() {
+        return gets.get();
+    }
+
+    @Override
+    protected void service(final HttpServletRequest req, final HttpServletResponse resp)
+            throws ServletException, IOException {
+        if ("HEAD".equals(req.getMethod())) {
+            heads.incrementAndGet();
+        } else if ("GET".equals(req.getMethod())) {
+            gets.incrementAndGet();
+        }
+        super.service(req, resp);
+    }
 
     @Override
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
@@ -59,9 +86,18 @@ public class Foo extends HttpServlet {
         }
 
         final String name = req.getRequestURI().replaceAll(".*/apache-tomee", "apache-tomee").replace("/", "_");
-        final URL resource = getClass().getClassLoader().getResource("fixtures/" + name);
+        URL resource = getClass().getClassLoader().getResource("fixtures/" + name);
         if (resource == null) {
-            resp.setStatus(485);
+            // Like a real Nexus: a directory requested without a trailing slash 301-redirects to
+            // the slash form (our dir fixtures are stored with a trailing underscore). HttpClient
+            // follows it on HEAD and GET, so resolution lands on the listing.
+            if (getClass().getClassLoader().getResource("fixtures/" + name + "_") != null) {
+                resp.setStatus(301);
+                resp.setHeader("Location", req.getRequestURL().toString() + "/");
+                return;
+            }
+            // Otherwise it genuinely doesn't exist.
+            resp.setStatus(404);
             return;
         }
 
@@ -73,7 +109,9 @@ public class Foo extends HttpServlet {
         final String content = raw.replace("https://nexus.example",
                 String.format("http://%s:%s", uri.getHost(), uri.getPort()));
 
-        resp.setContentType("text/html");
+        // Directory listings (fixtures stored with a trailing underscore) are HTML; everything
+        // else is a file with a non-HTML type — that's how resolution tells dir from file.
+        resp.setContentType(name.endsWith("_") ? "text/html" : "application/octet-stream");
         resp.getOutputStream().write(content.getBytes(StandardCharsets.UTF_8));
     }
 }

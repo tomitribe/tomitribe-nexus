@@ -14,11 +14,15 @@
 package org.tomitribe.nexus;
 
 import org.apache.http.HttpResponse;
+import org.tomitribe.nexus.parse.Parser;
+import org.tomitribe.nexus.parse.Parsers;
 import org.tomitribe.swizzle.stream.StreamLexer;
+import org.tomitribe.util.IO;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +36,15 @@ import java.util.List;
  */
 final class NexusDir extends NexusPath {
 
+    private final Instant modified;
+
     NexusDir(final NexusFileSystem fs, final List<String> names, final boolean absolute) {
+        this(fs, names, absolute, null);
+    }
+
+    NexusDir(final NexusFileSystem fs, final List<String> names, final boolean absolute, final Instant modified) {
         super(fs, names, absolute);
+        this.modified = modified;
     }
 
     /**
@@ -47,7 +58,7 @@ final class NexusDir extends NexusPath {
 
     /** Navigate to a child file the caller already knows to be one. */
     NexusFile file(final String relative) {
-        return new NexusFile(fs, append(relative), true, null);
+        return new NexusFile(fs, append(relative), true, null, null);
     }
 
     private List<String> append(final String relative) {
@@ -81,25 +92,19 @@ final class NexusDir extends NexusPath {
             throw new IOException("Listing " + toRemoteUri() + " -> " + status);
         }
         final List<NexusPath> children = new ArrayList<>();
-        try (final InputStream content = response.getEntity().getContent()) {
-            final StreamLexer lexer = new StreamLexer(content);
-            while (lexer.readAndMark("<a ", "/a>")) {
-                try {
-                    final String link = lexer.peek("href=\"", "\"");
-                    final String name = lexer.peek(">", "<");
-                    if (name.equals("../") || link.equals("../")) continue;
+        final String content = IO.slurp(response.getEntity().getContent());
 
-                    final List<String> childNames = new ArrayList<>(names);
-                    if (name.endsWith("/")) {
-                        childNames.add(name.substring(0, name.length() - 1));
-                        children.add(new NexusDir(fs, childNames, true));
-                    } else {
-                        childNames.add(name);
-                        children.add(new NexusFile(fs, childNames, true, null));
-                    }
-                } finally {
-                    lexer.unmark();
-                }
+        final List<Parser.Node> nodes = Parsers.parse(content);
+        for (final Parser.Node node : nodes) {
+            final String name = node.getName();
+
+            final List<String> childNames = new ArrayList<>(names);
+            if (name.endsWith("/")) {
+                childNames.add(name.substring(0, name.length() - 1));
+                children.add(new NexusDir(fs, childNames, true, node.getModified()));
+            } else {
+                childNames.add(name);
+                children.add(new NexusFile(fs, childNames, true, node.getSize(), node.getModified()));
             }
         }
         return children;
@@ -107,17 +112,12 @@ final class NexusDir extends NexusPath {
 
     @Override
     BasicFileAttributes attributes() {
-        // Known directory — no request needed.
-        return new NexusAttributes(true, 0, this);
+        // Known directory — no request needed; carries the listing's date when we have it.
+        return new NexusAttributes(true, null, modified, this);
     }
 
     @Override
     void checkExists() {
         // A directory handle is only ever produced from a listing or known structure.
-    }
-
-    @Override
-    String state() {
-        return "NexusDir";
     }
 }

@@ -64,12 +64,15 @@ final class NexusFileSystem extends FileSystem {
         for (final String segment : more) {
             sb.append('/').append(segment);
         }
-        // A hand-built path's kind is not yet known — hence Unknown.
+        // Absolute only if it begins with '/', like any provider — so resolve("child") appends
+        // rather than replacing. A hand-built path's kind is not yet known, hence Unknown.
+        final String joined = sb.toString();
+        final boolean absolute = joined.startsWith("/");
         final List<String> names = new ArrayList<>();
-        for (final String segment : sb.toString().split("/")) {
+        for (final String segment : joined.split("/")) {
             if (!segment.isEmpty()) names.add(segment);
         }
-        return new NexusUnknown(this, names, true);
+        return new NexusUnknown(this, names, absolute);
     }
 
     @Override

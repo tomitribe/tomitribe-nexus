@@ -15,9 +15,12 @@ package org.tomitribe.nexus;
 
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.utils.DateUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
+import java.time.Instant;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
@@ -68,7 +71,7 @@ final class NexusUnknown extends NexusPath {
         } else if (isHtml(head)) {
             discovered = new NexusDir(fs, names, absolute);
         } else {
-            discovered = new NexusFile(fs, names, absolute, contentLength(head));
+            discovered = new NexusFile(fs, names, absolute, contentLength(head), lastModified(head));
         }
 
         resolved.compareAndSet(null, discovered);
@@ -84,6 +87,13 @@ final class NexusUnknown extends NexusPath {
         final Header header = response.getFirstHeader("Content-Length");
         if (header == null) return null;
         return Long.parseLong(header.getValue());
+    }
+
+    private static Instant lastModified(final HttpResponse response) {
+        final Header header = response.getFirstHeader("Last-Modified");
+        if (header == null) return null;
+        final java.util.Date date = DateUtils.parseDate(header.getValue());
+        return date == null ? null : date.toInstant();
     }
 
     @Override
@@ -106,9 +116,16 @@ final class NexusUnknown extends NexusPath {
         resolve().checkExists();
     }
 
+    /**
+     * Peek, never resolve. Once this path has been resolved (by a prior behavioral call),
+     * {@code normalize()} returns the concrete state — {@link NexusDir}/{@link NexusFile}/
+     * {@link NexusMissing} — so callers can observe the transition via the returned path's
+     * runtime class without triggering a request. Until then it returns the unresolved path.
+     * This is the deliberate, documented hook tests use to assert state through the public API.
+     */
     @Override
-    String state() {
+    public Path normalize() {
         final NexusPath current = resolved.get();
-        return current == null ? "unresolved" : current.state();
+        return current != null ? current.normalize() : super.normalize();
     }
 }

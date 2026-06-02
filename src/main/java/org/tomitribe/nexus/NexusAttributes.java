@@ -17,29 +17,27 @@ import java.io.UncheckedIOException;
 import java.io.IOException;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
+import java.time.Instant;
 
 /**
  * Minimal {@link BasicFileAttributes} — enough for {@code Files.walk} and {@code Files.copy}.
  *
  * <p>{@code isDirectory()} is answered with zero I/O (the path already knows its kind),
- * which is what keeps a walk request-minimal: it only ever asks "directory?". Size is
- * resolved lazily via a HEAD and only if a caller actually asks — a walk never does.
+ * which is what keeps a walk request-minimal: it only ever asks "directory?". When the size
+ * and last-modified arrived on the listing they are returned directly; otherwise size falls
+ * back to a lazy HEAD, asked only if a caller actually reads it.
  */
 final class NexusAttributes implements BasicFileAttributes {
 
     private final boolean directory;
+    private final Instant modified;
     private final NexusPath owner;
     private Long size;
 
-    NexusAttributes(final boolean directory, final long size, final NexusPath owner) {
-        this.directory = directory;
-        this.size = size;
-        this.owner = owner;
-    }
-
-    NexusAttributes(final boolean directory, final Long knownSize, final NexusPath owner) {
+    NexusAttributes(final boolean directory, final Long knownSize, final Instant modified, final NexusPath owner) {
         this.directory = directory;
         this.size = knownSize;
+        this.modified = modified;
         this.owner = owner;
     }
 
@@ -78,17 +76,18 @@ final class NexusAttributes implements BasicFileAttributes {
 
     @Override
     public FileTime lastModifiedTime() {
-        return FileTime.fromMillis(0);
+        // From the listing when we have it; epoch otherwise (e.g. a cold, hand-built path).
+        return modified != null ? FileTime.from(modified) : FileTime.fromMillis(0);
     }
 
     @Override
     public FileTime lastAccessTime() {
-        return FileTime.fromMillis(0);
+        return lastModifiedTime();
     }
 
     @Override
     public FileTime creationTime() {
-        return FileTime.fromMillis(0);
+        return lastModifiedTime();
     }
 
     @Override

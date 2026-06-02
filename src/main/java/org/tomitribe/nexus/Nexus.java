@@ -24,69 +24,82 @@ import java.util.Base64;
 import java.util.Objects;
 
 /**
- * Entry point — builds a read-only Nexus {@link java.nio.file.FileSystem} and returns
- * its root {@link Path}. The {@code FileSystem} is constructed directly and never
- * registered with the JVM (no {@code META-INF/services}); the returned {@code Path}
- * carries its own provider, so {@code Files.copy} / {@code Files.walk} dispatch through
- * it without global wiring.
+ * Entry point — configure with a {@link #builder()} and {@code build()} a read-only
+ * {@link java.nio.file.Path} rooted at the repository.
  *
- * <p>The root {@code /} maps to the configured base URI and {@code ..} can never climb
- * above it, so an off-base request is unrepresentable — there is no host or scheme to
- * point elsewhere.
- *
- * <p>Usage — the whole crawl-filter-download as vanilla NIO:
  * <pre>{@code
- *   final Path nexus = Nexus.root(
- *           URI.create("https://nexus.example/content/repositories/releases/"),
- *           "user", "pass");
+ *   Path root = Nexus.builder()
+ *           .baseUri(URI.create("https://nexus.example/content/repositories/releases/"))
+ *           .credentials("user", "pass")   // optional; omit for anonymous access
+ *           .build();
  *
- *   try (Stream<Path> walk = Files.walk(nexus.resolve("org/apache/tomee/apache-tomee/9.0.1"))) {
+ *   try (Stream<Path> walk = Files.walk(root.resolve("org/apache/tomee/apache-tomee/9.0.1"))) {
  *       walk.filter(Files::isRegularFile)
- *           .filter(p -> p.getFileName().toString().endsWith(".zip"))
- *           .forEach(p -> {
- *               try {
- *                   Files.copy(p, local.resolve(p.getFileName().toString()), REPLACE_EXISTING);
- *               } catch (IOException e) {
- *                   throw new UncheckedIOException(e);
- *               }
- *           });
+ *           .forEach(p -> ...);            // Files.copy(p, local.resolve(p.getFileName().toString()), ...)
  *   }
  * }</pre>
+ *
+ * <p>The returned {@code Path} carries its own provider, so {@code Files.copy}/{@code Files.walk}
+ * dispatch through it with no JVM registration. The root {@code /} is the base URI and {@code ..}
+ * cannot climb above it, so an off-base request is unrepresentable.
+ *
+ * <p>A builder rather than a constructor on purpose: new options can be added over time without
+ * a growing pile of overloads to maintain.
  */
 public final class Nexus {
 
     private Nexus() {
     }
 
-    /** Anonymous access (e.g. a public repository such as Maven Central). */
-    public static Path root(final URI baseUri) {
-        return root(baseUri, null, null);
+    public static Builder builder() {
+        return new Builder();
     }
 
-    /**
-     * Authenticated access. Credentials are attached as HTTP Basic, and only ever to the
-     * configured base host — a defense-in-depth guard so credentials cannot leak to an
-     * unexpected target.
-     */
-    public static Path root(final URI baseUri, final String username, final String password) {
-        Objects.requireNonNull(baseUri, "baseUri");
+    public static final class Builder {
 
-        final HttpClientBuilder builder = HttpClientBuilder.create();
-        if (username != null) {
-            final String value = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
-            final HttpRequestInterceptor authorization = (request, context) -> {
-                final HttpHost target = (HttpHost) context.getAttribute(HttpClientContext.HTTP_TARGET_HOST);
-                if (isSameHost(target, baseUri)) {
-                    request.addHeader("Authorization", "Basic " + value);
-                }
-            };
-            builder.addInterceptorFirst(authorization);
+        private URI baseUri;
+        private String username;
+        private String password;
+
+        private Builder() {
         }
 
-        final HttpClient client = new HttpClient(builder.build());
-        final NexusFileSystemProvider provider = new NexusFileSystemProvider();
-        final NexusFileSystem fs = new NexusFileSystem(provider, baseUri, client);
-        return fs.root();
+        public Builder baseUri(final URI baseUri) {
+            this.baseUri = baseUri;
+            return this;
+        }
+
+        public Builder baseUri(final String baseUri) {
+            return baseUri(URI.create(baseUri));
+        }
+
+        /** Optional. When omitted, no authentication header is ever sent. */
+        public Builder credentials(final String username, final String password) {
+            this.username = username;
+            this.password = password;
+            return this;
+        }
+
+        public Path build() {
+            Objects.requireNonNull(baseUri, "baseUri is required");
+
+            final HttpClientBuilder builder = HttpClientBuilder.create();
+            if (username != null) {
+                final String value = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
+                final HttpRequestInterceptor authorization = (request, context) -> {
+                    // Attach credentials only to the configured base host — never leak them elsewhere.
+                    final HttpHost target = (HttpHost) context.getAttribute(HttpClientContext.HTTP_TARGET_HOST);
+                    if (isSameHost(target, baseUri)) {
+                        request.addHeader("Authorization", "Basic " + value);
+                    }
+                };
+                builder.addInterceptorFirst(authorization);
+            }
+
+            final HttpClient client = new HttpClient(builder.build());
+            final NexusFileSystem fs = new NexusFileSystem(new NexusFileSystemProvider(), baseUri, client);
+            return fs.root();
+        }
     }
 
     private static boolean isSameHost(final HttpHost target, final URI base) {

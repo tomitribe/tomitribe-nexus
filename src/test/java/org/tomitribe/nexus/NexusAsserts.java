@@ -18,9 +18,13 @@ import java.nio.file.Path;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Mirror of jaws' {@code Asserts.assertType} — observe which state a path is in,
- * so a test can assert the {@link NexusUnknown} transition before and after the
- * operation that triggers it.
+ * Observe a path's state through the public API only — no privileged access. {@code normalize()}
+ * returns the current concrete state (an unresolved path until it has been resolved), so its
+ * runtime class name is the state. Defined once so the trick can be refined in a single place
+ * rather than copied across every assertion.
+ *
+ * <p>Built on the public {@link Path} surface, so the black-box {@code usage} tests — which can't
+ * see the package-private state types at all — use it exactly as the in-package tests do.
  */
 public final class NexusAsserts {
 
@@ -28,7 +32,13 @@ public final class NexusAsserts {
     }
 
     public static void assertType(final Path path, final String expected) {
-        final String actual = ((NexusPath) path).state();
-        assertEquals(expected, actual, "Expected state " + expected + " for " + path + ", found " + actual);
+        assertEquals(expected, typeOf(path), "Expected state " + expected + " for " + path);
+    }
+
+    public static String typeOf(final Path path) {
+        final String simpleName = path.normalize().getClass().getSimpleName();
+        // The unresolved state is the NexusUnknown class itself; once resolved, normalize()
+        // returns the concrete delegate, so any other class name is a settled state.
+        return simpleName.equals("NexusUnknown") ? "unresolved" : simpleName;
     }
 }
