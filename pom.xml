@@ -26,7 +26,7 @@
 
   <groupId>org.tomitribe.nexus</groupId>
   <artifactId>tomitribe-nexus</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>Tomitribe :: Nexus</name>
@@ -37,7 +37,7 @@
     <connection>scm:git:git@github.com:tomitribe/tomitribe-nexus.git</connection>
     <developerConnection>scm:git:git@github.com:tomitribe/tomitribe-nexus.git</developerConnection>
     <url>https://github.com/tomitribe/tomitribe-nexus</url>
-    <tag>HEAD</tag>
+    <tag>tomitribe-nexus-1.0.1</tag>
   </scm>
 
   <properties>
