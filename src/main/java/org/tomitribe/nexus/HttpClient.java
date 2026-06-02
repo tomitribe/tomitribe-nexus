@@ -28,7 +28,7 @@ import java.net.URI;
  * Isolated so the transport can be swapped (e.g. to {@code java.net.http}) without
  * touching the path lattice.
  */
-public class HttpClient implements Closeable {
+class HttpClient implements Closeable {
 
     private static final String USER_AGENT =
             "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.13) Gecko/20101206 Ubuntu/10.10 (maverick) Firefox/3.6.13";
