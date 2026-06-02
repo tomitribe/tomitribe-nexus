@@ -13,14 +13,9 @@
  */
 package org.tomitribe.nexus;
 
-import org.apache.http.Header;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.utils.DateUtils;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
-import java.time.Instant;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
@@ -62,38 +57,20 @@ final class NexusUnknown extends NexusPath {
         final NexusPath current = resolved.get();
         if (current != null) return current;
 
-        final HttpResponse head = fs.client().head(toRemoteUri());
-        final int status = head.getStatusLine().getStatusCode();
+        // head() releases the connection itself — no leak even though we discard the rest.
+        final HttpClient.Head head = fs.client().head(toRemoteUri());
 
         final NexusPath discovered;
-        if (status == 404) {
+        if (head.status() == 404) {
             discovered = new NexusMissing(fs, names, absolute);
-        } else if (isHtml(head)) {
+        } else if (head.isHtml()) {
             discovered = new NexusDir(fs, names, absolute);
         } else {
-            discovered = new NexusFile(fs, names, absolute, contentLength(head), lastModified(head));
+            discovered = new NexusFile(fs, names, absolute, head.contentLength(), head.lastModified());
         }
 
         resolved.compareAndSet(null, discovered);
         return resolved.get();
-    }
-
-    private static boolean isHtml(final HttpResponse response) {
-        final Header header = response.getFirstHeader("Content-Type");
-        return header != null && header.getValue() != null && header.getValue().contains("text/html");
-    }
-
-    private static Long contentLength(final HttpResponse response) {
-        final Header header = response.getFirstHeader("Content-Length");
-        if (header == null) return null;
-        return Long.parseLong(header.getValue());
-    }
-
-    private static Instant lastModified(final HttpResponse response) {
-        final Header header = response.getFirstHeader("Last-Modified");
-        if (header == null) return null;
-        final java.util.Date date = DateUtils.parseDate(header.getValue());
-        return date == null ? null : date.toInstant();
     }
 
     @Override

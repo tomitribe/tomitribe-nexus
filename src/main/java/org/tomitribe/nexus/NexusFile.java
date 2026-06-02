@@ -13,7 +13,8 @@
  */
 package org.tomitribe.nexus;
 
-import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -54,10 +55,15 @@ final class NexusFile extends NexusPath {
 
     @Override
     InputStream openStream() throws IOException {
-        final HttpResponse response = fs.client().get(toRemoteUri());
+        final CloseableHttpResponse response = fs.client().get(toRemoteUri());
         final int status = response.getStatusLine().getStatusCode();
-        if (status == 404) throw new NoSuchFileException(toString());
-        if (status != 200) throw new IOException("GET " + toRemoteUri() + " -> " + status);
+        if (status != 200) {
+            // Release the connection before bailing — otherwise the error path leaks it.
+            EntityUtils.consumeQuietly(response.getEntity());
+            if (status == 404) throw new NoSuchFileException(toString());
+            throw new IOException("GET " + toRemoteUri() + " -> " + status);
+        }
+        // Success: the caller (Files.copy / newInputStream) closes the stream, releasing the connection.
         return response.getEntity().getContent();
     }
 

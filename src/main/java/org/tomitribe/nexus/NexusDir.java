@@ -13,10 +13,10 @@
  */
 package org.tomitribe.nexus;
 
-import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.util.EntityUtils;
 import org.tomitribe.nexus.parse.Parser;
 import org.tomitribe.nexus.parse.Parsers;
-import org.tomitribe.swizzle.stream.StreamLexer;
 import org.tomitribe.util.IO;
 
 import java.io.IOException;
@@ -29,10 +29,10 @@ import java.util.List;
 /**
  * A known directory. Supports listing/walking; reading bytes is illegal.
  *
- * <p>Children are discovered by scraping the Nexus HTML index (the same
- * {@link StreamLexer} lex the old {@code Crawler} used). The listing itself tells us
- * each child's kind — a trailing slash means a directory — so children arrive as
- * concrete, immutable {@link NexusDir}/{@link NexusFile} with no extra request.
+ * <p>Children are discovered by scraping the HTML index via the pluggable {@link Parsers}.
+ * The listing itself tells us each child's kind — a trailing slash means a directory — and
+ * carries its size and last-modified, so children arrive as concrete, immutable
+ * {@link NexusDir}/{@link NexusFile} with their attributes and no extra request.
  */
 final class NexusDir extends NexusPath {
 
@@ -86,13 +86,18 @@ final class NexusDir extends NexusPath {
 
     @Override
     List<NexusPath> listChildren() throws IOException {
-        final HttpResponse response = fs.client().get(toRemoteUri());
+        final CloseableHttpResponse response = fs.client().get(toRemoteUri());
         final int status = response.getStatusLine().getStatusCode();
         if (status != 200) {
+            EntityUtils.consumeQuietly(response.getEntity());
             throw new IOException("Listing " + toRemoteUri() + " -> " + status);
         }
         final List<NexusPath> children = new ArrayList<>();
-        final String content = IO.slurp(response.getEntity().getContent());
+        final String content;
+        // Closing the entity stream returns the connection to the pool.
+        try (final InputStream in = response.getEntity().getContent()) {
+            content = IO.slurp(in);
+        }
 
         final List<Parser.Node> nodes = Parsers.parse(content);
         for (final Parser.Node node : nodes) {

@@ -14,19 +14,29 @@
 package org.tomitribe.nexus;
 
 import org.apache.http.Header;
-import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
+import org.apache.http.client.utils.DateUtils;
 import org.apache.http.impl.client.CloseableHttpClient;
 
 import java.io.Closeable;
 import java.io.IOException;
 import java.net.URI;
+import java.time.Instant;
+import java.util.Date;
 
 /**
- * The narrow HTTP surface the filesystem needs: GET, HEAD, and a content-length probe.
+ * The narrow HTTP surface the filesystem needs: a streaming GET and a HEAD.
  * Isolated so the transport can be swapped (e.g. to {@code java.net.http}) without
  * touching the path lattice.
+ *
+ * <p>Connection discipline matters: Apache HttpClient pools a small number of connections
+ * per route (2 by default) and only returns one to the pool when its response is fully
+ * consumed or closed. {@link #head(URI)} extracts the headers it needs and closes the
+ * response itself, so a HEAD never leaks a connection. {@link #get(URI)} streams, so the
+ * caller owns the returned response and must close it (closing the entity stream releases
+ * the connection) — and must consume it on the error path too.
  */
 class HttpClient implements Closeable {
 
@@ -39,28 +49,53 @@ class HttpClient implements Closeable {
         this.client = client;
     }
 
-    public long getContentLength(final URI uri) throws IOException {
-        final HttpResponse head = head(uri);
-        for (final Header header : head.getHeaders("Content-Length")) {
-            return Long.parseLong(header.getValue());
-        }
-        return -1;
-    }
-
-    public HttpResponse get(final URI uri) throws IOException {
+    public CloseableHttpResponse get(final URI uri) throws IOException {
         final HttpGet request = new HttpGet(uri);
         request.setHeader("User-Agent", USER_AGENT);
         return client.execute(request);
     }
 
-    public HttpResponse head(final URI uri) throws IOException {
+    /**
+     * Issues a HEAD and returns just the headers we care about, releasing the connection
+     * before returning — so no caller can leak it.
+     */
+    public Head head(final URI uri) throws IOException {
         final HttpHead request = new HttpHead(uri);
         request.setHeader("User-Agent", USER_AGENT);
-        return client.execute(request);
+        try (final CloseableHttpResponse response = client.execute(request)) {
+            return new Head(
+                    response.getStatusLine().getStatusCode(),
+                    value(response, "Content-Type"),
+                    parseLong(value(response, "Content-Length")),
+                    parseDate(value(response, "Last-Modified")));
+        }
+    }
+
+    private static String value(final CloseableHttpResponse response, final String name) {
+        final Header header = response.getFirstHeader(name);
+        return header == null ? null : header.getValue();
+    }
+
+    private static Long parseLong(final String value) {
+        return value == null ? null : Long.parseLong(value);
+    }
+
+    private static Instant parseDate(final String value) {
+        if (value == null) return null;
+        final Date date = DateUtils.parseDate(value);
+        return date == null ? null : date.toInstant();
     }
 
     @Override
     public void close() throws IOException {
         client.close();
+    }
+
+    /** The handful of header values a HEAD needs to surface; the connection is already released. */
+    record Head(int status, String contentType, Long contentLength, Instant lastModified) {
+
+        boolean isHtml() {
+            return contentType != null && contentType.contains("text/html");
+        }
     }
 }
