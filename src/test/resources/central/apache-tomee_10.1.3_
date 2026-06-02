@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Central Repository: org/apache/tomee/apache-tomee/10.1.3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+body {
+	background: #fff;
+}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>org/apache/tomee/apache-tomee/10.1.3</h1>
+	</header>
+	<hr/>
+	<main>
+		<pre id="contents">
+<a href="../">../</a>
+<a href="apache-tomee-10.1.3-javadoc.jar" title="apache-tomee-10.1.3-javadoc.jar">apache-tomee-10.1.3-javadoc.jar</a>                   2025-12-07 15:26     17806      
+<a href="apache-tomee-10.1.3-javadoc.jar.asc" title="apache-tomee-10.1.3-javadoc.jar.asc">apache-tomee-10.1.3-javadoc.jar.asc</a>               2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-javadoc.jar.md5" title="apache-tomee-10.1.3-javadoc.jar.md5">apache-tomee-10.1.3-javadoc.jar.md5</a>               2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-javadoc.jar.sha1" title="apache-tomee-10.1.3-javadoc.jar.sha1">apache-tomee-10.1.3-javadoc.jar.sha1</a>              2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-microprofile.tar.gz" title="apache-tomee-10.1.3-microprofile.tar.gz">apache-tomee-10.1.3-microprofile.tar.gz</a>           2025-12-07 15:26  71099795      
+<a href="apache-tomee-10.1.3-microprofile.tar.gz.asc" title="apache-tomee-10.1.3-microprofile.tar.gz.asc">apache-tomee-10.1.3-microprofile.tar.gz.asc</a>       2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-microprofile.tar.gz.md5" title="apache-tomee-10.1.3-microprofile.tar.gz.md5">apache-tomee-10.1.3-microprofile.tar.gz.md5</a>       2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-microprofile.tar.gz.sha1" title="apache-tomee-10.1.3-microprofile.tar.gz.sha1">apache-tomee-10.1.3-microprofile.tar.gz.sha1</a>      2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-microprofile.zip" title="apache-tomee-10.1.3-microprofile.zip">apache-tomee-10.1.3-microprofile.zip</a>              2025-12-07 15:26  71460470      
+<a href="apache-tomee-10.1.3-microprofile.zip.asc" title="apache-tomee-10.1.3-microprofile.zip.asc">apache-tomee-10.1.3-microprofile.zip.asc</a>          2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-microprofile.zip.md5" title="apache-tomee-10.1.3-microprofile.zip.md5">apache-tomee-10.1.3-microprofile.zip.md5</a>          2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-microprofile.zip.sha1" title="apache-tomee-10.1.3-microprofile.zip.sha1">apache-tomee-10.1.3-microprofile.zip.sha1</a>         2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-plume.tar.gz" title="apache-tomee-10.1.3-plume.tar.gz">apache-tomee-10.1.3-plume.tar.gz</a>                  2025-12-07 15:26  83701202      
+<a href="apache-tomee-10.1.3-plume.tar.gz.asc" title="apache-tomee-10.1.3-plume.tar.gz.asc">apache-tomee-10.1.3-plume.tar.gz.asc</a>              2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-plume.tar.gz.md5" title="apache-tomee-10.1.3-plume.tar.gz.md5">apache-tomee-10.1.3-plume.tar.gz.md5</a>              2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-plume.tar.gz.sha1" title="apache-tomee-10.1.3-plume.tar.gz.sha1">apache-tomee-10.1.3-plume.tar.gz.sha1</a>             2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-plume.zip" title="apache-tomee-10.1.3-plume.zip">apache-tomee-10.1.3-plume.zip</a>                     2025-12-07 15:26  84056421      
+<a href="apache-tomee-10.1.3-plume.zip.asc" title="apache-tomee-10.1.3-plume.zip.asc">apache-tomee-10.1.3-plume.zip.asc</a>                 2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-plume.zip.md5" title="apache-tomee-10.1.3-plume.zip.md5">apache-tomee-10.1.3-plume.zip.md5</a>                 2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-plume.zip.sha1" title="apache-tomee-10.1.3-plume.zip.sha1">apache-tomee-10.1.3-plume.zip.sha1</a>                2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-plus.tar.gz" title="apache-tomee-10.1.3-plus.tar.gz">apache-tomee-10.1.3-plus.tar.gz</a>                   2025-12-07 15:26  75608825      
+<a href="apache-tomee-10.1.3-plus.tar.gz.asc" title="apache-tomee-10.1.3-plus.tar.gz.asc">apache-tomee-10.1.3-plus.tar.gz.asc</a>               2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-plus.tar.gz.md5" title="apache-tomee-10.1.3-plus.tar.gz.md5">apache-tomee-10.1.3-plus.tar.gz.md5</a>               2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-plus.tar.gz.sha1" title="apache-tomee-10.1.3-plus.tar.gz.sha1">apache-tomee-10.1.3-plus.tar.gz.sha1</a>              2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-plus.zip" title="apache-tomee-10.1.3-plus.zip">apache-tomee-10.1.3-plus.zip</a>                      2025-12-07 15:26  75957783      
+<a href="apache-tomee-10.1.3-plus.zip.asc" title="apache-tomee-10.1.3-plus.zip.asc">apache-tomee-10.1.3-plus.zip.asc</a>                  2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-plus.zip.md5" title="apache-tomee-10.1.3-plus.zip.md5">apache-tomee-10.1.3-plus.zip.md5</a>                  2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-plus.zip.sha1" title="apache-tomee-10.1.3-plus.zip.sha1">apache-tomee-10.1.3-plus.zip.sha1</a>                 2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-sources.jar" title="apache-tomee-10.1.3-sources.jar">apache-tomee-10.1.3-sources.jar</a>                   2025-12-07 15:26    299287      
+<a href="apache-tomee-10.1.3-sources.jar.asc" title="apache-tomee-10.1.3-sources.jar.asc">apache-tomee-10.1.3-sources.jar.asc</a>               2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-sources.jar.md5" title="apache-tomee-10.1.3-sources.jar.md5">apache-tomee-10.1.3-sources.jar.md5</a>               2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-sources.jar.sha1" title="apache-tomee-10.1.3-sources.jar.sha1">apache-tomee-10.1.3-sources.jar.sha1</a>              2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-webprofile.tar.gz" title="apache-tomee-10.1.3-webprofile.tar.gz">apache-tomee-10.1.3-webprofile.tar.gz</a>             2025-12-07 15:26  60483515      
+<a href="apache-tomee-10.1.3-webprofile.tar.gz.asc" title="apache-tomee-10.1.3-webprofile.tar.gz.asc">apache-tomee-10.1.3-webprofile.tar.gz.asc</a>         2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-webprofile.tar.gz.md5" title="apache-tomee-10.1.3-webprofile.tar.gz.md5">apache-tomee-10.1.3-webprofile.tar.gz.md5</a>         2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-webprofile.tar.gz.sha1" title="apache-tomee-10.1.3-webprofile.tar.gz.sha1">apache-tomee-10.1.3-webprofile.tar.gz.sha1</a>        2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3-webprofile.zip" title="apache-tomee-10.1.3-webprofile.zip">apache-tomee-10.1.3-webprofile.zip</a>                2025-12-07 15:26  60819090      
+<a href="apache-tomee-10.1.3-webprofile.zip.asc" title="apache-tomee-10.1.3-webprofile.zip.asc">apache-tomee-10.1.3-webprofile.zip.asc</a>            2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3-webprofile.zip.md5" title="apache-tomee-10.1.3-webprofile.zip.md5">apache-tomee-10.1.3-webprofile.zip.md5</a>            2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3-webprofile.zip.sha1" title="apache-tomee-10.1.3-webprofile.zip.sha1">apache-tomee-10.1.3-webprofile.zip.sha1</a>           2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3.jar" title="apache-tomee-10.1.3.jar">apache-tomee-10.1.3.jar</a>                           2025-12-07 15:26     12753      
+<a href="apache-tomee-10.1.3.jar.asc" title="apache-tomee-10.1.3.jar.asc">apache-tomee-10.1.3.jar.asc</a>                       2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3.jar.md5" title="apache-tomee-10.1.3.jar.md5">apache-tomee-10.1.3.jar.md5</a>                       2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3.jar.sha1" title="apache-tomee-10.1.3.jar.sha1">apache-tomee-10.1.3.jar.sha1</a>                      2025-12-07 15:26        40      
+<a href="apache-tomee-10.1.3.pom" title="apache-tomee-10.1.3.pom">apache-tomee-10.1.3.pom</a>                           2025-12-07 15:26     34474      
+<a href="apache-tomee-10.1.3.pom.asc" title="apache-tomee-10.1.3.pom.asc">apache-tomee-10.1.3.pom.asc</a>                       2025-12-07 15:26       833      
+<a href="apache-tomee-10.1.3.pom.md5" title="apache-tomee-10.1.3.pom.md5">apache-tomee-10.1.3.pom.md5</a>                       2025-12-07 15:26        32      
+<a href="apache-tomee-10.1.3.pom.sha1" title="apache-tomee-10.1.3.pom.sha1">apache-tomee-10.1.3.pom.sha1</a>                      2025-12-07 15:26        40      
+		</pre>
+	</main>
+	<hr/>
+</body>
+
+</html>

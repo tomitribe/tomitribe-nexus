@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Central Repository: org/apache/tomee/apache-tomee/8.0.0-M3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+body {
+	background: #fff;
+}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>org/apache/tomee/apache-tomee/8.0.0-M3</h1>
+	</header>
+	<hr/>
+	<main>
+		<pre id="contents">
+<a href="../">../</a>
+<a href="apache-tomee-8.0.0-M3-javadoc.jar" title="apache-tomee-8.0.0-M3-javadoc.jar">apache-tomee-8.0.0-M3-javadoc.jar</a>                 2019-05-23 07:24     52374      
+<a href="apache-tomee-8.0.0-M3-javadoc.jar.asc" title="apache-tomee-8.0.0-M3-javadoc.jar.asc">apache-tomee-8.0.0-M3-javadoc.jar.asc</a>             2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-javadoc.jar.asc.md5" title="apache-tomee-8.0.0-M3-javadoc.jar.asc.md5">apache-tomee-8.0.0-M3-javadoc.jar.asc.md5</a>         2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-javadoc.jar.asc.sha1" title="apache-tomee-8.0.0-M3-javadoc.jar.asc.sha1">apache-tomee-8.0.0-M3-javadoc.jar.asc.sha1</a>        2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-javadoc.jar.md5" title="apache-tomee-8.0.0-M3-javadoc.jar.md5">apache-tomee-8.0.0-M3-javadoc.jar.md5</a>             2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-javadoc.jar.sha1" title="apache-tomee-8.0.0-M3-javadoc.jar.sha1">apache-tomee-8.0.0-M3-javadoc.jar.sha1</a>            2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-microprofile.tar.gz" title="apache-tomee-8.0.0-M3-microprofile.tar.gz">apache-tomee-8.0.0-M3-microprofile.tar.gz</a>         2019-05-23 07:24  46301794      
+<a href="apache-tomee-8.0.0-M3-microprofile.tar.gz.asc" title="apache-tomee-8.0.0-M3-microprofile.tar.gz.asc">apache-tomee-8.0.0-M3-microprofile.tar.gz.asc</a>     2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-microprofile.tar.gz.asc.md5" title="apache-tomee-8.0.0-M3-microprofile.tar.gz.asc.md5">apache-tomee-8.0.0-M3-microprofile.tar.gz.asc...</a>  2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-microprofile.tar.gz.asc.sha1" title="apache-tomee-8.0.0-M3-microprofile.tar.gz.asc.sha1">apache-tomee-8.0.0-M3-microprofile.tar.gz.asc...</a>  2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-microprofile.tar.gz.md5" title="apache-tomee-8.0.0-M3-microprofile.tar.gz.md5">apache-tomee-8.0.0-M3-microprofile.tar.gz.md5</a>     2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-microprofile.tar.gz.sha1" title="apache-tomee-8.0.0-M3-microprofile.tar.gz.sha1">apache-tomee-8.0.0-M3-microprofile.tar.gz.sha...</a>  2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-microprofile.zip" title="apache-tomee-8.0.0-M3-microprofile.zip">apache-tomee-8.0.0-M3-microprofile.zip</a>            2019-05-23 07:24  46716921      
+<a href="apache-tomee-8.0.0-M3-microprofile.zip.asc" title="apache-tomee-8.0.0-M3-microprofile.zip.asc">apache-tomee-8.0.0-M3-microprofile.zip.asc</a>        2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-microprofile.zip.asc.md5" title="apache-tomee-8.0.0-M3-microprofile.zip.asc.md5">apache-tomee-8.0.0-M3-microprofile.zip.asc.md...</a>  2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-microprofile.zip.asc.sha1" title="apache-tomee-8.0.0-M3-microprofile.zip.asc.sha1">apache-tomee-8.0.0-M3-microprofile.zip.asc.sh...</a>  2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-microprofile.zip.md5" title="apache-tomee-8.0.0-M3-microprofile.zip.md5">apache-tomee-8.0.0-M3-microprofile.zip.md5</a>        2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-microprofile.zip.sha1" title="apache-tomee-8.0.0-M3-microprofile.zip.sha1">apache-tomee-8.0.0-M3-microprofile.zip.sha1</a>       2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plume.tar.gz" title="apache-tomee-8.0.0-M3-plume.tar.gz">apache-tomee-8.0.0-M3-plume.tar.gz</a>                2019-05-23 07:24  71092738      
+<a href="apache-tomee-8.0.0-M3-plume.tar.gz.asc" title="apache-tomee-8.0.0-M3-plume.tar.gz.asc">apache-tomee-8.0.0-M3-plume.tar.gz.asc</a>            2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-plume.tar.gz.asc.md5" title="apache-tomee-8.0.0-M3-plume.tar.gz.asc.md5">apache-tomee-8.0.0-M3-plume.tar.gz.asc.md5</a>        2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plume.tar.gz.asc.sha1" title="apache-tomee-8.0.0-M3-plume.tar.gz.asc.sha1">apache-tomee-8.0.0-M3-plume.tar.gz.asc.sha1</a>       2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plume.tar.gz.md5" title="apache-tomee-8.0.0-M3-plume.tar.gz.md5">apache-tomee-8.0.0-M3-plume.tar.gz.md5</a>            2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plume.tar.gz.sha1" title="apache-tomee-8.0.0-M3-plume.tar.gz.sha1">apache-tomee-8.0.0-M3-plume.tar.gz.sha1</a>           2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plume.zip" title="apache-tomee-8.0.0-M3-plume.zip">apache-tomee-8.0.0-M3-plume.zip</a>                   2019-05-23 07:24  71501755      
+<a href="apache-tomee-8.0.0-M3-plume.zip.asc" title="apache-tomee-8.0.0-M3-plume.zip.asc">apache-tomee-8.0.0-M3-plume.zip.asc</a>               2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-plume.zip.asc.md5" title="apache-tomee-8.0.0-M3-plume.zip.asc.md5">apache-tomee-8.0.0-M3-plume.zip.asc.md5</a>           2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plume.zip.asc.sha1" title="apache-tomee-8.0.0-M3-plume.zip.asc.sha1">apache-tomee-8.0.0-M3-plume.zip.asc.sha1</a>          2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plume.zip.md5" title="apache-tomee-8.0.0-M3-plume.zip.md5">apache-tomee-8.0.0-M3-plume.zip.md5</a>               2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plume.zip.sha1" title="apache-tomee-8.0.0-M3-plume.zip.sha1">apache-tomee-8.0.0-M3-plume.zip.sha1</a>              2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plus.tar.gz" title="apache-tomee-8.0.0-M3-plus.tar.gz">apache-tomee-8.0.0-M3-plus.tar.gz</a>                 2019-05-23 07:24  63911717      
+<a href="apache-tomee-8.0.0-M3-plus.tar.gz.asc" title="apache-tomee-8.0.0-M3-plus.tar.gz.asc">apache-tomee-8.0.0-M3-plus.tar.gz.asc</a>             2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-plus.tar.gz.asc.md5" title="apache-tomee-8.0.0-M3-plus.tar.gz.asc.md5">apache-tomee-8.0.0-M3-plus.tar.gz.asc.md5</a>         2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plus.tar.gz.asc.sha1" title="apache-tomee-8.0.0-M3-plus.tar.gz.asc.sha1">apache-tomee-8.0.0-M3-plus.tar.gz.asc.sha1</a>        2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plus.tar.gz.md5" title="apache-tomee-8.0.0-M3-plus.tar.gz.md5">apache-tomee-8.0.0-M3-plus.tar.gz.md5</a>             2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plus.tar.gz.sha1" title="apache-tomee-8.0.0-M3-plus.tar.gz.sha1">apache-tomee-8.0.0-M3-plus.tar.gz.sha1</a>            2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plus.zip" title="apache-tomee-8.0.0-M3-plus.zip">apache-tomee-8.0.0-M3-plus.zip</a>                    2019-05-23 07:24  64325655      
+<a href="apache-tomee-8.0.0-M3-plus.zip.asc" title="apache-tomee-8.0.0-M3-plus.zip.asc">apache-tomee-8.0.0-M3-plus.zip.asc</a>                2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-plus.zip.asc.md5" title="apache-tomee-8.0.0-M3-plus.zip.asc.md5">apache-tomee-8.0.0-M3-plus.zip.asc.md5</a>            2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plus.zip.asc.sha1" title="apache-tomee-8.0.0-M3-plus.zip.asc.sha1">apache-tomee-8.0.0-M3-plus.zip.asc.sha1</a>           2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-plus.zip.md5" title="apache-tomee-8.0.0-M3-plus.zip.md5">apache-tomee-8.0.0-M3-plus.zip.md5</a>                2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-plus.zip.sha1" title="apache-tomee-8.0.0-M3-plus.zip.sha1">apache-tomee-8.0.0-M3-plus.zip.sha1</a>               2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-sources.jar" title="apache-tomee-8.0.0-M3-sources.jar">apache-tomee-8.0.0-M3-sources.jar</a>                 2019-05-23 07:24    246387      
+<a href="apache-tomee-8.0.0-M3-sources.jar.asc" title="apache-tomee-8.0.0-M3-sources.jar.asc">apache-tomee-8.0.0-M3-sources.jar.asc</a>             2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-sources.jar.asc.md5" title="apache-tomee-8.0.0-M3-sources.jar.asc.md5">apache-tomee-8.0.0-M3-sources.jar.asc.md5</a>         2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-sources.jar.asc.sha1" title="apache-tomee-8.0.0-M3-sources.jar.asc.sha1">apache-tomee-8.0.0-M3-sources.jar.asc.sha1</a>        2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-sources.jar.md5" title="apache-tomee-8.0.0-M3-sources.jar.md5">apache-tomee-8.0.0-M3-sources.jar.md5</a>             2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-sources.jar.sha1" title="apache-tomee-8.0.0-M3-sources.jar.sha1">apache-tomee-8.0.0-M3-sources.jar.sha1</a>            2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-webprofile.tar.gz" title="apache-tomee-8.0.0-M3-webprofile.tar.gz">apache-tomee-8.0.0-M3-webprofile.tar.gz</a>           2019-05-23 07:24  43359567      
+<a href="apache-tomee-8.0.0-M3-webprofile.tar.gz.asc" title="apache-tomee-8.0.0-M3-webprofile.tar.gz.asc">apache-tomee-8.0.0-M3-webprofile.tar.gz.asc</a>       2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-webprofile.tar.gz.asc.md5" title="apache-tomee-8.0.0-M3-webprofile.tar.gz.asc.md5">apache-tomee-8.0.0-M3-webprofile.tar.gz.asc.m...</a>  2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-webprofile.tar.gz.asc.sha1" title="apache-tomee-8.0.0-M3-webprofile.tar.gz.asc.sha1">apache-tomee-8.0.0-M3-webprofile.tar.gz.asc.s...</a>  2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-webprofile.tar.gz.md5" title="apache-tomee-8.0.0-M3-webprofile.tar.gz.md5">apache-tomee-8.0.0-M3-webprofile.tar.gz.md5</a>       2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-webprofile.tar.gz.sha1" title="apache-tomee-8.0.0-M3-webprofile.tar.gz.sha1">apache-tomee-8.0.0-M3-webprofile.tar.gz.sha1</a>      2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-webprofile.zip" title="apache-tomee-8.0.0-M3-webprofile.zip">apache-tomee-8.0.0-M3-webprofile.zip</a>              2019-05-23 07:24  43736913      
+<a href="apache-tomee-8.0.0-M3-webprofile.zip.asc" title="apache-tomee-8.0.0-M3-webprofile.zip.asc">apache-tomee-8.0.0-M3-webprofile.zip.asc</a>          2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3-webprofile.zip.asc.md5" title="apache-tomee-8.0.0-M3-webprofile.zip.asc.md5">apache-tomee-8.0.0-M3-webprofile.zip.asc.md5</a>      2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-webprofile.zip.asc.sha1" title="apache-tomee-8.0.0-M3-webprofile.zip.asc.sha1">apache-tomee-8.0.0-M3-webprofile.zip.asc.sha1</a>     2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3-webprofile.zip.md5" title="apache-tomee-8.0.0-M3-webprofile.zip.md5">apache-tomee-8.0.0-M3-webprofile.zip.md5</a>          2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3-webprofile.zip.sha1" title="apache-tomee-8.0.0-M3-webprofile.zip.sha1">apache-tomee-8.0.0-M3-webprofile.zip.sha1</a>         2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3.jar" title="apache-tomee-8.0.0-M3.jar">apache-tomee-8.0.0-M3.jar</a>                         2019-05-23 07:24     12093      
+<a href="apache-tomee-8.0.0-M3.jar.asc" title="apache-tomee-8.0.0-M3.jar.asc">apache-tomee-8.0.0-M3.jar.asc</a>                     2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3.jar.asc.md5" title="apache-tomee-8.0.0-M3.jar.asc.md5">apache-tomee-8.0.0-M3.jar.asc.md5</a>                 2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3.jar.asc.sha1" title="apache-tomee-8.0.0-M3.jar.asc.sha1">apache-tomee-8.0.0-M3.jar.asc.sha1</a>                2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3.jar.md5" title="apache-tomee-8.0.0-M3.jar.md5">apache-tomee-8.0.0-M3.jar.md5</a>                     2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3.jar.sha1" title="apache-tomee-8.0.0-M3.jar.sha1">apache-tomee-8.0.0-M3.jar.sha1</a>                    2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3.pom" title="apache-tomee-8.0.0-M3.pom">apache-tomee-8.0.0-M3.pom</a>                         2019-05-23 07:24     19240      
+<a href="apache-tomee-8.0.0-M3.pom.asc" title="apache-tomee-8.0.0-M3.pom.asc">apache-tomee-8.0.0-M3.pom.asc</a>                     2019-05-23 07:24       488      
+<a href="apache-tomee-8.0.0-M3.pom.asc.md5" title="apache-tomee-8.0.0-M3.pom.asc.md5">apache-tomee-8.0.0-M3.pom.asc.md5</a>                 2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3.pom.asc.sha1" title="apache-tomee-8.0.0-M3.pom.asc.sha1">apache-tomee-8.0.0-M3.pom.asc.sha1</a>                2019-05-23 07:24        40      
+<a href="apache-tomee-8.0.0-M3.pom.md5" title="apache-tomee-8.0.0-M3.pom.md5">apache-tomee-8.0.0-M3.pom.md5</a>                     2019-05-23 07:24        32      
+<a href="apache-tomee-8.0.0-M3.pom.sha1" title="apache-tomee-8.0.0-M3.pom.sha1">apache-tomee-8.0.0-M3.pom.sha1</a>                    2019-05-23 07:24        40      
+		</pre>
+	</main>
+	<hr/>
+</body>
+
+</html>

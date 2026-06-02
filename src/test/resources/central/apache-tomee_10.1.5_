@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Central Repository: org/apache/tomee/apache-tomee/10.1.5</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+body {
+	background: #fff;
+}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>org/apache/tomee/apache-tomee/10.1.5</h1>
+	</header>
+	<hr/>
+	<main>
+		<pre id="contents">
+<a href="../">../</a>
+<a href="apache-tomee-10.1.5-javadoc.jar" title="apache-tomee-10.1.5-javadoc.jar">apache-tomee-10.1.5-javadoc.jar</a>                   2026-04-26 06:47     22206      
+<a href="apache-tomee-10.1.5-javadoc.jar.asc" title="apache-tomee-10.1.5-javadoc.jar.asc">apache-tomee-10.1.5-javadoc.jar.asc</a>               2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-javadoc.jar.md5" title="apache-tomee-10.1.5-javadoc.jar.md5">apache-tomee-10.1.5-javadoc.jar.md5</a>               2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-javadoc.jar.sha1" title="apache-tomee-10.1.5-javadoc.jar.sha1">apache-tomee-10.1.5-javadoc.jar.sha1</a>              2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-microprofile.tar.gz" title="apache-tomee-10.1.5-microprofile.tar.gz">apache-tomee-10.1.5-microprofile.tar.gz</a>           2026-04-26 06:47  73132222      
+<a href="apache-tomee-10.1.5-microprofile.tar.gz.asc" title="apache-tomee-10.1.5-microprofile.tar.gz.asc">apache-tomee-10.1.5-microprofile.tar.gz.asc</a>       2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-microprofile.tar.gz.md5" title="apache-tomee-10.1.5-microprofile.tar.gz.md5">apache-tomee-10.1.5-microprofile.tar.gz.md5</a>       2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-microprofile.tar.gz.sha1" title="apache-tomee-10.1.5-microprofile.tar.gz.sha1">apache-tomee-10.1.5-microprofile.tar.gz.sha1</a>      2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-microprofile.zip" title="apache-tomee-10.1.5-microprofile.zip">apache-tomee-10.1.5-microprofile.zip</a>              2026-04-26 06:47  73494725      
+<a href="apache-tomee-10.1.5-microprofile.zip.asc" title="apache-tomee-10.1.5-microprofile.zip.asc">apache-tomee-10.1.5-microprofile.zip.asc</a>          2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-microprofile.zip.md5" title="apache-tomee-10.1.5-microprofile.zip.md5">apache-tomee-10.1.5-microprofile.zip.md5</a>          2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-microprofile.zip.sha1" title="apache-tomee-10.1.5-microprofile.zip.sha1">apache-tomee-10.1.5-microprofile.zip.sha1</a>         2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-plume.tar.gz" title="apache-tomee-10.1.5-plume.tar.gz">apache-tomee-10.1.5-plume.tar.gz</a>                  2026-04-26 06:47  85718457      
+<a href="apache-tomee-10.1.5-plume.tar.gz.asc" title="apache-tomee-10.1.5-plume.tar.gz.asc">apache-tomee-10.1.5-plume.tar.gz.asc</a>              2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-plume.tar.gz.md5" title="apache-tomee-10.1.5-plume.tar.gz.md5">apache-tomee-10.1.5-plume.tar.gz.md5</a>              2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-plume.tar.gz.sha1" title="apache-tomee-10.1.5-plume.tar.gz.sha1">apache-tomee-10.1.5-plume.tar.gz.sha1</a>             2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-plume.zip" title="apache-tomee-10.1.5-plume.zip">apache-tomee-10.1.5-plume.zip</a>                     2026-04-26 06:47  86086066      
+<a href="apache-tomee-10.1.5-plume.zip.asc" title="apache-tomee-10.1.5-plume.zip.asc">apache-tomee-10.1.5-plume.zip.asc</a>                 2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-plume.zip.md5" title="apache-tomee-10.1.5-plume.zip.md5">apache-tomee-10.1.5-plume.zip.md5</a>                 2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-plume.zip.sha1" title="apache-tomee-10.1.5-plume.zip.sha1">apache-tomee-10.1.5-plume.zip.sha1</a>                2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-plus.tar.gz" title="apache-tomee-10.1.5-plus.tar.gz">apache-tomee-10.1.5-plus.tar.gz</a>                   2026-04-26 06:47  77599536      
+<a href="apache-tomee-10.1.5-plus.tar.gz.asc" title="apache-tomee-10.1.5-plus.tar.gz.asc">apache-tomee-10.1.5-plus.tar.gz.asc</a>               2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-plus.tar.gz.md5" title="apache-tomee-10.1.5-plus.tar.gz.md5">apache-tomee-10.1.5-plus.tar.gz.md5</a>               2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-plus.tar.gz.sha1" title="apache-tomee-10.1.5-plus.tar.gz.sha1">apache-tomee-10.1.5-plus.tar.gz.sha1</a>              2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-plus.zip" title="apache-tomee-10.1.5-plus.zip">apache-tomee-10.1.5-plus.zip</a>                      2026-04-26 06:47  77961363      
+<a href="apache-tomee-10.1.5-plus.zip.asc" title="apache-tomee-10.1.5-plus.zip.asc">apache-tomee-10.1.5-plus.zip.asc</a>                  2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-plus.zip.md5" title="apache-tomee-10.1.5-plus.zip.md5">apache-tomee-10.1.5-plus.zip.md5</a>                  2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-plus.zip.sha1" title="apache-tomee-10.1.5-plus.zip.sha1">apache-tomee-10.1.5-plus.zip.sha1</a>                 2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-sources.jar" title="apache-tomee-10.1.5-sources.jar">apache-tomee-10.1.5-sources.jar</a>                   2026-04-26 06:47    299373      
+<a href="apache-tomee-10.1.5-sources.jar.asc" title="apache-tomee-10.1.5-sources.jar.asc">apache-tomee-10.1.5-sources.jar.asc</a>               2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-sources.jar.md5" title="apache-tomee-10.1.5-sources.jar.md5">apache-tomee-10.1.5-sources.jar.md5</a>               2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-sources.jar.sha1" title="apache-tomee-10.1.5-sources.jar.sha1">apache-tomee-10.1.5-sources.jar.sha1</a>              2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-webprofile.tar.gz" title="apache-tomee-10.1.5-webprofile.tar.gz">apache-tomee-10.1.5-webprofile.tar.gz</a>             2026-04-26 06:47  62462824      
+<a href="apache-tomee-10.1.5-webprofile.tar.gz.asc" title="apache-tomee-10.1.5-webprofile.tar.gz.asc">apache-tomee-10.1.5-webprofile.tar.gz.asc</a>         2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-webprofile.tar.gz.md5" title="apache-tomee-10.1.5-webprofile.tar.gz.md5">apache-tomee-10.1.5-webprofile.tar.gz.md5</a>         2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-webprofile.tar.gz.sha1" title="apache-tomee-10.1.5-webprofile.tar.gz.sha1">apache-tomee-10.1.5-webprofile.tar.gz.sha1</a>        2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5-webprofile.zip" title="apache-tomee-10.1.5-webprofile.zip">apache-tomee-10.1.5-webprofile.zip</a>                2026-04-26 06:47  62804884      
+<a href="apache-tomee-10.1.5-webprofile.zip.asc" title="apache-tomee-10.1.5-webprofile.zip.asc">apache-tomee-10.1.5-webprofile.zip.asc</a>            2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5-webprofile.zip.md5" title="apache-tomee-10.1.5-webprofile.zip.md5">apache-tomee-10.1.5-webprofile.zip.md5</a>            2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5-webprofile.zip.sha1" title="apache-tomee-10.1.5-webprofile.zip.sha1">apache-tomee-10.1.5-webprofile.zip.sha1</a>           2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5.jar" title="apache-tomee-10.1.5.jar">apache-tomee-10.1.5.jar</a>                           2026-04-26 06:47     12715      
+<a href="apache-tomee-10.1.5.jar.asc" title="apache-tomee-10.1.5.jar.asc">apache-tomee-10.1.5.jar.asc</a>                       2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5.jar.md5" title="apache-tomee-10.1.5.jar.md5">apache-tomee-10.1.5.jar.md5</a>                       2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5.jar.sha1" title="apache-tomee-10.1.5.jar.sha1">apache-tomee-10.1.5.jar.sha1</a>                      2026-04-26 06:47        40      
+<a href="apache-tomee-10.1.5.pom" title="apache-tomee-10.1.5.pom">apache-tomee-10.1.5.pom</a>                           2026-04-26 06:47     34438      
+<a href="apache-tomee-10.1.5.pom.asc" title="apache-tomee-10.1.5.pom.asc">apache-tomee-10.1.5.pom.asc</a>                       2026-04-26 06:47       870      
+<a href="apache-tomee-10.1.5.pom.md5" title="apache-tomee-10.1.5.pom.md5">apache-tomee-10.1.5.pom.md5</a>                       2026-04-26 06:47        32      
+<a href="apache-tomee-10.1.5.pom.sha1" title="apache-tomee-10.1.5.pom.sha1">apache-tomee-10.1.5.pom.sha1</a>                      2026-04-26 06:47        40      
+		</pre>
+	</main>
+	<hr/>
+</body>
+
+</html>

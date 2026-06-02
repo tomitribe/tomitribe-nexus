@@ -13,6 +13,8 @@
  */
 package org.tomitribe.nexus;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.jupiter.api.Test;
 import org.tomitribe.nexus.parse.CentralParser;
 import org.tomitribe.nexus.parse.Nexus2Parser;
@@ -21,6 +23,8 @@ import org.tomitribe.nexus.parse.Parsers;
 import org.tomitribe.util.IO;
 import org.tomitribe.util.Join;
 
+import java.io.File;
+import java.net.URI;
 import java.net.URL;
 import java.util.List;
 
@@ -55,6 +59,29 @@ public class ParsingTest {
                 "Node{name='maven-metadata.xml.sha1', modified=2023-04-06T20:24:49Z, size=40}\n" +
                 "Node{name='maven-metadata.xml.sha256', modified=2023-04-06T20:24:49Z, size=64}\n" +
                 "Node{name='maven-metadata.xml.sha512', modified=2023-04-06T20:24:49Z, size=128}", Join.join("\n", nodes));
+    }
+
+//    @Test
+    public void fetch() throws Exception {
+        final URL resource = this.getClass().getClassLoader().getResource("central/apache-tomee_");
+        final String slurp = IO.slurp(resource);
+        final Parser parser = new CentralParser();
+
+        final List<Parser.Node> nodes = parser.parse(slurp);
+        final File central = new File("/Users/dblevins/work/tomitribe/tomitribe-nexus/src/test/resources/central");
+
+
+        for (final Parser.Node node : nodes) {
+
+            try (final HttpClient client = new HttpClient(HttpClientBuilder.create().build())){
+                System.out.println(node);
+                final HttpResponse response = client.get(URI.create("https://repo1.maven.org/maven2/org/apache/tomee/apache-tomee/" + node.getName()));
+                final String content = IO.slurp(response.getEntity().getContent());
+                final File file = new File(central, "apache-tomee_" + node.getName().replace('/', '_'));
+                IO.copy(content, file);
+
+            }
+        }
     }
 
     @Test

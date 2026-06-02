@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Central Repository: org/apache/tomee/apache-tomee/8.0.10</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+body {
+	background: #fff;
+}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>org/apache/tomee/apache-tomee/8.0.10</h1>
+	</header>
+	<hr/>
+	<main>
+		<pre id="contents">
+<a href="../">../</a>
+<a href="apache-tomee-8.0.10-javadoc.jar" title="apache-tomee-8.0.10-javadoc.jar">apache-tomee-8.0.10-javadoc.jar</a>                   2022-02-10 14:54     52121      
+<a href="apache-tomee-8.0.10-javadoc.jar.asc" title="apache-tomee-8.0.10-javadoc.jar.asc">apache-tomee-8.0.10-javadoc.jar.asc</a>               2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-javadoc.jar.md5" title="apache-tomee-8.0.10-javadoc.jar.md5">apache-tomee-8.0.10-javadoc.jar.md5</a>               2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-javadoc.jar.sha1" title="apache-tomee-8.0.10-javadoc.jar.sha1">apache-tomee-8.0.10-javadoc.jar.sha1</a>              2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-microprofile.jar" title="apache-tomee-8.0.10-microprofile.jar">apache-tomee-8.0.10-microprofile.jar</a>              2022-02-10 14:54  66483860      
+<a href="apache-tomee-8.0.10-microprofile.jar.asc" title="apache-tomee-8.0.10-microprofile.jar.asc">apache-tomee-8.0.10-microprofile.jar.asc</a>          2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-microprofile.jar.md5" title="apache-tomee-8.0.10-microprofile.jar.md5">apache-tomee-8.0.10-microprofile.jar.md5</a>          2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-microprofile.jar.sha1" title="apache-tomee-8.0.10-microprofile.jar.sha1">apache-tomee-8.0.10-microprofile.jar.sha1</a>         2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-microprofile.tar.gz" title="apache-tomee-8.0.10-microprofile.tar.gz">apache-tomee-8.0.10-microprofile.tar.gz</a>           2022-02-10 14:54  66483860      
+<a href="apache-tomee-8.0.10-microprofile.tar.gz.asc" title="apache-tomee-8.0.10-microprofile.tar.gz.asc">apache-tomee-8.0.10-microprofile.tar.gz.asc</a>       2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-microprofile.tar.gz.md5" title="apache-tomee-8.0.10-microprofile.tar.gz.md5">apache-tomee-8.0.10-microprofile.tar.gz.md5</a>       2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-microprofile.tar.gz.sha1" title="apache-tomee-8.0.10-microprofile.tar.gz.sha1">apache-tomee-8.0.10-microprofile.tar.gz.sha1</a>      2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-microprofile.zip" title="apache-tomee-8.0.10-microprofile.zip">apache-tomee-8.0.10-microprofile.zip</a>              2022-02-10 14:54  66851267      
+<a href="apache-tomee-8.0.10-microprofile.zip.asc" title="apache-tomee-8.0.10-microprofile.zip.asc">apache-tomee-8.0.10-microprofile.zip.asc</a>          2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-microprofile.zip.md5" title="apache-tomee-8.0.10-microprofile.zip.md5">apache-tomee-8.0.10-microprofile.zip.md5</a>          2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-microprofile.zip.sha1" title="apache-tomee-8.0.10-microprofile.zip.sha1">apache-tomee-8.0.10-microprofile.zip.sha1</a>         2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-plume.jar" title="apache-tomee-8.0.10-plume.jar">apache-tomee-8.0.10-plume.jar</a>                     2022-02-10 14:54  78463120      
+<a href="apache-tomee-8.0.10-plume.jar.asc" title="apache-tomee-8.0.10-plume.jar.asc">apache-tomee-8.0.10-plume.jar.asc</a>                 2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-plume.jar.md5" title="apache-tomee-8.0.10-plume.jar.md5">apache-tomee-8.0.10-plume.jar.md5</a>                 2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-plume.jar.sha1" title="apache-tomee-8.0.10-plume.jar.sha1">apache-tomee-8.0.10-plume.jar.sha1</a>                2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-plume.tar.gz" title="apache-tomee-8.0.10-plume.tar.gz">apache-tomee-8.0.10-plume.tar.gz</a>                  2022-02-10 14:54  78463120      
+<a href="apache-tomee-8.0.10-plume.tar.gz.asc" title="apache-tomee-8.0.10-plume.tar.gz.asc">apache-tomee-8.0.10-plume.tar.gz.asc</a>              2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-plume.tar.gz.md5" title="apache-tomee-8.0.10-plume.tar.gz.md5">apache-tomee-8.0.10-plume.tar.gz.md5</a>              2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-plume.tar.gz.sha1" title="apache-tomee-8.0.10-plume.tar.gz.sha1">apache-tomee-8.0.10-plume.tar.gz.sha1</a>             2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-plume.zip" title="apache-tomee-8.0.10-plume.zip">apache-tomee-8.0.10-plume.zip</a>                     2022-02-10 14:54  78824905      
+<a href="apache-tomee-8.0.10-plume.zip.asc" title="apache-tomee-8.0.10-plume.zip.asc">apache-tomee-8.0.10-plume.zip.asc</a>                 2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-plume.zip.md5" title="apache-tomee-8.0.10-plume.zip.md5">apache-tomee-8.0.10-plume.zip.md5</a>                 2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-plume.zip.sha1" title="apache-tomee-8.0.10-plume.zip.sha1">apache-tomee-8.0.10-plume.zip.sha1</a>                2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-plus.jar" title="apache-tomee-8.0.10-plus.jar">apache-tomee-8.0.10-plus.jar</a>                      2022-02-10 14:54  71387267      
+<a href="apache-tomee-8.0.10-plus.jar.asc" title="apache-tomee-8.0.10-plus.jar.asc">apache-tomee-8.0.10-plus.jar.asc</a>                  2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-plus.jar.md5" title="apache-tomee-8.0.10-plus.jar.md5">apache-tomee-8.0.10-plus.jar.md5</a>                  2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-plus.jar.sha1" title="apache-tomee-8.0.10-plus.jar.sha1">apache-tomee-8.0.10-plus.jar.sha1</a>                 2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-plus.tar.gz" title="apache-tomee-8.0.10-plus.tar.gz">apache-tomee-8.0.10-plus.tar.gz</a>                   2022-02-10 14:54  71387267      
+<a href="apache-tomee-8.0.10-plus.tar.gz.asc" title="apache-tomee-8.0.10-plus.tar.gz.asc">apache-tomee-8.0.10-plus.tar.gz.asc</a>               2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-plus.tar.gz.md5" title="apache-tomee-8.0.10-plus.tar.gz.md5">apache-tomee-8.0.10-plus.tar.gz.md5</a>               2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-plus.tar.gz.sha1" title="apache-tomee-8.0.10-plus.tar.gz.sha1">apache-tomee-8.0.10-plus.tar.gz.sha1</a>              2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-plus.zip" title="apache-tomee-8.0.10-plus.zip">apache-tomee-8.0.10-plus.zip</a>                      2022-02-10 14:54  71747333      
+<a href="apache-tomee-8.0.10-plus.zip.asc" title="apache-tomee-8.0.10-plus.zip.asc">apache-tomee-8.0.10-plus.zip.asc</a>                  2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-plus.zip.md5" title="apache-tomee-8.0.10-plus.zip.md5">apache-tomee-8.0.10-plus.zip.md5</a>                  2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-plus.zip.sha1" title="apache-tomee-8.0.10-plus.zip.sha1">apache-tomee-8.0.10-plus.zip.sha1</a>                 2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-sources.jar" title="apache-tomee-8.0.10-sources.jar">apache-tomee-8.0.10-sources.jar</a>                   2022-02-10 14:54    298714      
+<a href="apache-tomee-8.0.10-sources.jar.asc" title="apache-tomee-8.0.10-sources.jar.asc">apache-tomee-8.0.10-sources.jar.asc</a>               2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-sources.jar.md5" title="apache-tomee-8.0.10-sources.jar.md5">apache-tomee-8.0.10-sources.jar.md5</a>               2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-sources.jar.sha1" title="apache-tomee-8.0.10-sources.jar.sha1">apache-tomee-8.0.10-sources.jar.sha1</a>              2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-webprofile.jar" title="apache-tomee-8.0.10-webprofile.jar">apache-tomee-8.0.10-webprofile.jar</a>                2022-02-10 14:54  48130547      
+<a href="apache-tomee-8.0.10-webprofile.jar.asc" title="apache-tomee-8.0.10-webprofile.jar.asc">apache-tomee-8.0.10-webprofile.jar.asc</a>            2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-webprofile.jar.md5" title="apache-tomee-8.0.10-webprofile.jar.md5">apache-tomee-8.0.10-webprofile.jar.md5</a>            2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-webprofile.jar.sha1" title="apache-tomee-8.0.10-webprofile.jar.sha1">apache-tomee-8.0.10-webprofile.jar.sha1</a>           2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-webprofile.tar.gz" title="apache-tomee-8.0.10-webprofile.tar.gz">apache-tomee-8.0.10-webprofile.tar.gz</a>             2022-02-10 14:54  48130547      
+<a href="apache-tomee-8.0.10-webprofile.tar.gz.asc" title="apache-tomee-8.0.10-webprofile.tar.gz.asc">apache-tomee-8.0.10-webprofile.tar.gz.asc</a>         2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-webprofile.tar.gz.md5" title="apache-tomee-8.0.10-webprofile.tar.gz.md5">apache-tomee-8.0.10-webprofile.tar.gz.md5</a>         2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-webprofile.tar.gz.sha1" title="apache-tomee-8.0.10-webprofile.tar.gz.sha1">apache-tomee-8.0.10-webprofile.tar.gz.sha1</a>        2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10-webprofile.zip" title="apache-tomee-8.0.10-webprofile.zip">apache-tomee-8.0.10-webprofile.zip</a>                2022-02-10 14:54  48455807      
+<a href="apache-tomee-8.0.10-webprofile.zip.asc" title="apache-tomee-8.0.10-webprofile.zip.asc">apache-tomee-8.0.10-webprofile.zip.asc</a>            2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10-webprofile.zip.md5" title="apache-tomee-8.0.10-webprofile.zip.md5">apache-tomee-8.0.10-webprofile.zip.md5</a>            2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10-webprofile.zip.sha1" title="apache-tomee-8.0.10-webprofile.zip.sha1">apache-tomee-8.0.10-webprofile.zip.sha1</a>           2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10.jar" title="apache-tomee-8.0.10.jar">apache-tomee-8.0.10.jar</a>                           2022-02-10 14:54     12591      
+<a href="apache-tomee-8.0.10.jar.asc" title="apache-tomee-8.0.10.jar.asc">apache-tomee-8.0.10.jar.asc</a>                       2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10.jar.md5" title="apache-tomee-8.0.10.jar.md5">apache-tomee-8.0.10.jar.md5</a>                       2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10.jar.sha1" title="apache-tomee-8.0.10.jar.sha1">apache-tomee-8.0.10.jar.sha1</a>                      2022-02-10 14:54        40      
+<a href="apache-tomee-8.0.10.pom" title="apache-tomee-8.0.10.pom">apache-tomee-8.0.10.pom</a>                           2022-02-10 14:54     32488      
+<a href="apache-tomee-8.0.10.pom.asc" title="apache-tomee-8.0.10.pom.asc">apache-tomee-8.0.10.pom.asc</a>                       2022-02-10 14:54       833      
+<a href="apache-tomee-8.0.10.pom.md5" title="apache-tomee-8.0.10.pom.md5">apache-tomee-8.0.10.pom.md5</a>                       2022-02-10 14:54        32      
+<a href="apache-tomee-8.0.10.pom.sha1" title="apache-tomee-8.0.10.pom.sha1">apache-tomee-8.0.10.pom.sha1</a>                      2022-02-10 14:54        40      
+		</pre>
+	</main>
+	<hr/>
+</body>
+
+</html>

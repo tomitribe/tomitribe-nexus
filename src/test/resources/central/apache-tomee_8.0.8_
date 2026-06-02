@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Central Repository: org/apache/tomee/apache-tomee/8.0.8</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+body {
+	background: #fff;
+}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>org/apache/tomee/apache-tomee/8.0.8</h1>
+	</header>
+	<hr/>
+	<main>
+		<pre id="contents">
+<a href="../">../</a>
+<a href="apache-tomee-8.0.8-javadoc.jar" title="apache-tomee-8.0.8-javadoc.jar">apache-tomee-8.0.8-javadoc.jar</a>                    2021-08-31 14:51     52504      
+<a href="apache-tomee-8.0.8-javadoc.jar.asc" title="apache-tomee-8.0.8-javadoc.jar.asc">apache-tomee-8.0.8-javadoc.jar.asc</a>                2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-javadoc.jar.md5" title="apache-tomee-8.0.8-javadoc.jar.md5">apache-tomee-8.0.8-javadoc.jar.md5</a>                2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-javadoc.jar.sha1" title="apache-tomee-8.0.8-javadoc.jar.sha1">apache-tomee-8.0.8-javadoc.jar.sha1</a>               2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-microprofile.jar" title="apache-tomee-8.0.8-microprofile.jar">apache-tomee-8.0.8-microprofile.jar</a>               2021-08-31 14:51  64775049      
+<a href="apache-tomee-8.0.8-microprofile.jar.asc" title="apache-tomee-8.0.8-microprofile.jar.asc">apache-tomee-8.0.8-microprofile.jar.asc</a>           2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-microprofile.jar.md5" title="apache-tomee-8.0.8-microprofile.jar.md5">apache-tomee-8.0.8-microprofile.jar.md5</a>           2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-microprofile.jar.sha1" title="apache-tomee-8.0.8-microprofile.jar.sha1">apache-tomee-8.0.8-microprofile.jar.sha1</a>          2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-microprofile.tar.gz" title="apache-tomee-8.0.8-microprofile.tar.gz">apache-tomee-8.0.8-microprofile.tar.gz</a>            2021-08-31 14:51  64775049      
+<a href="apache-tomee-8.0.8-microprofile.tar.gz.asc" title="apache-tomee-8.0.8-microprofile.tar.gz.asc">apache-tomee-8.0.8-microprofile.tar.gz.asc</a>        2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-microprofile.tar.gz.md5" title="apache-tomee-8.0.8-microprofile.tar.gz.md5">apache-tomee-8.0.8-microprofile.tar.gz.md5</a>        2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-microprofile.tar.gz.sha1" title="apache-tomee-8.0.8-microprofile.tar.gz.sha1">apache-tomee-8.0.8-microprofile.tar.gz.sha1</a>       2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-microprofile.zip" title="apache-tomee-8.0.8-microprofile.zip">apache-tomee-8.0.8-microprofile.zip</a>               2021-08-31 14:51  65130786      
+<a href="apache-tomee-8.0.8-microprofile.zip.asc" title="apache-tomee-8.0.8-microprofile.zip.asc">apache-tomee-8.0.8-microprofile.zip.asc</a>           2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-microprofile.zip.md5" title="apache-tomee-8.0.8-microprofile.zip.md5">apache-tomee-8.0.8-microprofile.zip.md5</a>           2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-microprofile.zip.sha1" title="apache-tomee-8.0.8-microprofile.zip.sha1">apache-tomee-8.0.8-microprofile.zip.sha1</a>          2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-plume.jar" title="apache-tomee-8.0.8-plume.jar">apache-tomee-8.0.8-plume.jar</a>                      2021-08-31 14:51  76825926      
+<a href="apache-tomee-8.0.8-plume.jar.asc" title="apache-tomee-8.0.8-plume.jar.asc">apache-tomee-8.0.8-plume.jar.asc</a>                  2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-plume.jar.md5" title="apache-tomee-8.0.8-plume.jar.md5">apache-tomee-8.0.8-plume.jar.md5</a>                  2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-plume.jar.sha1" title="apache-tomee-8.0.8-plume.jar.sha1">apache-tomee-8.0.8-plume.jar.sha1</a>                 2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-plume.tar.gz" title="apache-tomee-8.0.8-plume.tar.gz">apache-tomee-8.0.8-plume.tar.gz</a>                   2021-08-31 14:51  76825926      
+<a href="apache-tomee-8.0.8-plume.tar.gz.asc" title="apache-tomee-8.0.8-plume.tar.gz.asc">apache-tomee-8.0.8-plume.tar.gz.asc</a>               2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-plume.tar.gz.md5" title="apache-tomee-8.0.8-plume.tar.gz.md5">apache-tomee-8.0.8-plume.tar.gz.md5</a>               2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-plume.tar.gz.sha1" title="apache-tomee-8.0.8-plume.tar.gz.sha1">apache-tomee-8.0.8-plume.tar.gz.sha1</a>              2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-plume.zip" title="apache-tomee-8.0.8-plume.zip">apache-tomee-8.0.8-plume.zip</a>                      2021-08-31 14:51  77182309      
+<a href="apache-tomee-8.0.8-plume.zip.asc" title="apache-tomee-8.0.8-plume.zip.asc">apache-tomee-8.0.8-plume.zip.asc</a>                  2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-plume.zip.md5" title="apache-tomee-8.0.8-plume.zip.md5">apache-tomee-8.0.8-plume.zip.md5</a>                  2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-plume.zip.sha1" title="apache-tomee-8.0.8-plume.zip.sha1">apache-tomee-8.0.8-plume.zip.sha1</a>                 2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-plus.jar" title="apache-tomee-8.0.8-plus.jar">apache-tomee-8.0.8-plus.jar</a>                       2021-08-31 14:51  69668975      
+<a href="apache-tomee-8.0.8-plus.jar.asc" title="apache-tomee-8.0.8-plus.jar.asc">apache-tomee-8.0.8-plus.jar.asc</a>                   2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-plus.jar.md5" title="apache-tomee-8.0.8-plus.jar.md5">apache-tomee-8.0.8-plus.jar.md5</a>                   2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-plus.jar.sha1" title="apache-tomee-8.0.8-plus.jar.sha1">apache-tomee-8.0.8-plus.jar.sha1</a>                  2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-plus.tar.gz" title="apache-tomee-8.0.8-plus.tar.gz">apache-tomee-8.0.8-plus.tar.gz</a>                    2021-08-31 14:51  69668975      
+<a href="apache-tomee-8.0.8-plus.tar.gz.asc" title="apache-tomee-8.0.8-plus.tar.gz.asc">apache-tomee-8.0.8-plus.tar.gz.asc</a>                2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-plus.tar.gz.md5" title="apache-tomee-8.0.8-plus.tar.gz.md5">apache-tomee-8.0.8-plus.tar.gz.md5</a>                2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-plus.tar.gz.sha1" title="apache-tomee-8.0.8-plus.tar.gz.sha1">apache-tomee-8.0.8-plus.tar.gz.sha1</a>               2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-plus.zip" title="apache-tomee-8.0.8-plus.zip">apache-tomee-8.0.8-plus.zip</a>                       2021-08-31 14:51  70023759      
+<a href="apache-tomee-8.0.8-plus.zip.asc" title="apache-tomee-8.0.8-plus.zip.asc">apache-tomee-8.0.8-plus.zip.asc</a>                   2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-plus.zip.md5" title="apache-tomee-8.0.8-plus.zip.md5">apache-tomee-8.0.8-plus.zip.md5</a>                   2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-plus.zip.sha1" title="apache-tomee-8.0.8-plus.zip.sha1">apache-tomee-8.0.8-plus.zip.sha1</a>                  2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-sources.jar" title="apache-tomee-8.0.8-sources.jar">apache-tomee-8.0.8-sources.jar</a>                    2021-08-31 14:51    298863      
+<a href="apache-tomee-8.0.8-sources.jar.asc" title="apache-tomee-8.0.8-sources.jar.asc">apache-tomee-8.0.8-sources.jar.asc</a>                2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-sources.jar.md5" title="apache-tomee-8.0.8-sources.jar.md5">apache-tomee-8.0.8-sources.jar.md5</a>                2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-sources.jar.sha1" title="apache-tomee-8.0.8-sources.jar.sha1">apache-tomee-8.0.8-sources.jar.sha1</a>               2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-webprofile.jar" title="apache-tomee-8.0.8-webprofile.jar">apache-tomee-8.0.8-webprofile.jar</a>                 2021-08-31 14:51  49843058      
+<a href="apache-tomee-8.0.8-webprofile.jar.asc" title="apache-tomee-8.0.8-webprofile.jar.asc">apache-tomee-8.0.8-webprofile.jar.asc</a>             2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-webprofile.jar.md5" title="apache-tomee-8.0.8-webprofile.jar.md5">apache-tomee-8.0.8-webprofile.jar.md5</a>             2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-webprofile.jar.sha1" title="apache-tomee-8.0.8-webprofile.jar.sha1">apache-tomee-8.0.8-webprofile.jar.sha1</a>            2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-webprofile.tar.gz" title="apache-tomee-8.0.8-webprofile.tar.gz">apache-tomee-8.0.8-webprofile.tar.gz</a>              2021-08-31 14:51  49843058      
+<a href="apache-tomee-8.0.8-webprofile.tar.gz.asc" title="apache-tomee-8.0.8-webprofile.tar.gz.asc">apache-tomee-8.0.8-webprofile.tar.gz.asc</a>          2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-webprofile.tar.gz.md5" title="apache-tomee-8.0.8-webprofile.tar.gz.md5">apache-tomee-8.0.8-webprofile.tar.gz.md5</a>          2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-webprofile.tar.gz.sha1" title="apache-tomee-8.0.8-webprofile.tar.gz.sha1">apache-tomee-8.0.8-webprofile.tar.gz.sha1</a>         2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8-webprofile.zip" title="apache-tomee-8.0.8-webprofile.zip">apache-tomee-8.0.8-webprofile.zip</a>                 2021-08-31 14:51  50158305      
+<a href="apache-tomee-8.0.8-webprofile.zip.asc" title="apache-tomee-8.0.8-webprofile.zip.asc">apache-tomee-8.0.8-webprofile.zip.asc</a>             2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8-webprofile.zip.md5" title="apache-tomee-8.0.8-webprofile.zip.md5">apache-tomee-8.0.8-webprofile.zip.md5</a>             2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8-webprofile.zip.sha1" title="apache-tomee-8.0.8-webprofile.zip.sha1">apache-tomee-8.0.8-webprofile.zip.sha1</a>            2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8.jar" title="apache-tomee-8.0.8.jar">apache-tomee-8.0.8.jar</a>                            2021-08-31 14:51     12413      
+<a href="apache-tomee-8.0.8.jar.asc" title="apache-tomee-8.0.8.jar.asc">apache-tomee-8.0.8.jar.asc</a>                        2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8.jar.md5" title="apache-tomee-8.0.8.jar.md5">apache-tomee-8.0.8.jar.md5</a>                        2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8.jar.sha1" title="apache-tomee-8.0.8.jar.sha1">apache-tomee-8.0.8.jar.sha1</a>                       2021-08-31 14:51        40      
+<a href="apache-tomee-8.0.8.pom" title="apache-tomee-8.0.8.pom">apache-tomee-8.0.8.pom</a>                            2021-08-31 14:51     30376      
+<a href="apache-tomee-8.0.8.pom.asc" title="apache-tomee-8.0.8.pom.asc">apache-tomee-8.0.8.pom.asc</a>                        2021-08-31 14:51       833      
+<a href="apache-tomee-8.0.8.pom.md5" title="apache-tomee-8.0.8.pom.md5">apache-tomee-8.0.8.pom.md5</a>                        2021-08-31 14:51        32      
+<a href="apache-tomee-8.0.8.pom.sha1" title="apache-tomee-8.0.8.pom.sha1">apache-tomee-8.0.8.pom.sha1</a>                       2021-08-31 14:51        40      
+		</pre>
+	</main>
+	<hr/>
+</body>
+
+</html>

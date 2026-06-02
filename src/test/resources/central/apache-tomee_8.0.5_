@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Central Repository: org/apache/tomee/apache-tomee/8.0.5</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+body {
+	background: #fff;
+}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>org/apache/tomee/apache-tomee/8.0.5</h1>
+	</header>
+	<hr/>
+	<main>
+		<pre id="contents">
+<a href="../">../</a>
+<a href="apache-tomee-8.0.5-javadoc.jar" title="apache-tomee-8.0.5-javadoc.jar">apache-tomee-8.0.5-javadoc.jar</a>                    2020-11-17 20:23     52376      
+<a href="apache-tomee-8.0.5-javadoc.jar.asc" title="apache-tomee-8.0.5-javadoc.jar.asc">apache-tomee-8.0.5-javadoc.jar.asc</a>                2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-javadoc.jar.md5" title="apache-tomee-8.0.5-javadoc.jar.md5">apache-tomee-8.0.5-javadoc.jar.md5</a>                2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-javadoc.jar.sha1" title="apache-tomee-8.0.5-javadoc.jar.sha1">apache-tomee-8.0.5-javadoc.jar.sha1</a>               2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-microprofile.tar.gz" title="apache-tomee-8.0.5-microprofile.tar.gz">apache-tomee-8.0.5-microprofile.tar.gz</a>            2020-11-17 20:23  57534678      
+<a href="apache-tomee-8.0.5-microprofile.tar.gz.asc" title="apache-tomee-8.0.5-microprofile.tar.gz.asc">apache-tomee-8.0.5-microprofile.tar.gz.asc</a>        2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-microprofile.tar.gz.md5" title="apache-tomee-8.0.5-microprofile.tar.gz.md5">apache-tomee-8.0.5-microprofile.tar.gz.md5</a>        2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-microprofile.tar.gz.sha1" title="apache-tomee-8.0.5-microprofile.tar.gz.sha1">apache-tomee-8.0.5-microprofile.tar.gz.sha1</a>       2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-microprofile.zip" title="apache-tomee-8.0.5-microprofile.zip">apache-tomee-8.0.5-microprofile.zip</a>               2020-11-17 20:23  57859349      
+<a href="apache-tomee-8.0.5-microprofile.zip.asc" title="apache-tomee-8.0.5-microprofile.zip.asc">apache-tomee-8.0.5-microprofile.zip.asc</a>           2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-microprofile.zip.md5" title="apache-tomee-8.0.5-microprofile.zip.md5">apache-tomee-8.0.5-microprofile.zip.md5</a>           2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-microprofile.zip.sha1" title="apache-tomee-8.0.5-microprofile.zip.sha1">apache-tomee-8.0.5-microprofile.zip.sha1</a>          2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-plume.tar.gz" title="apache-tomee-8.0.5-plume.tar.gz">apache-tomee-8.0.5-plume.tar.gz</a>                   2020-11-17 20:23  69656162      
+<a href="apache-tomee-8.0.5-plume.tar.gz.asc" title="apache-tomee-8.0.5-plume.tar.gz.asc">apache-tomee-8.0.5-plume.tar.gz.asc</a>               2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-plume.tar.gz.md5" title="apache-tomee-8.0.5-plume.tar.gz.md5">apache-tomee-8.0.5-plume.tar.gz.md5</a>               2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-plume.tar.gz.sha1" title="apache-tomee-8.0.5-plume.tar.gz.sha1">apache-tomee-8.0.5-plume.tar.gz.sha1</a>              2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-plume.zip" title="apache-tomee-8.0.5-plume.zip">apache-tomee-8.0.5-plume.zip</a>                      2020-11-17 20:23  69979777      
+<a href="apache-tomee-8.0.5-plume.zip.asc" title="apache-tomee-8.0.5-plume.zip.asc">apache-tomee-8.0.5-plume.zip.asc</a>                  2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-plume.zip.md5" title="apache-tomee-8.0.5-plume.zip.md5">apache-tomee-8.0.5-plume.zip.md5</a>                  2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-plume.zip.sha1" title="apache-tomee-8.0.5-plume.zip.sha1">apache-tomee-8.0.5-plume.zip.sha1</a>                 2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-plus.tar.gz" title="apache-tomee-8.0.5-plus.tar.gz">apache-tomee-8.0.5-plus.tar.gz</a>                    2020-11-17 20:23  62417065      
+<a href="apache-tomee-8.0.5-plus.tar.gz.asc" title="apache-tomee-8.0.5-plus.tar.gz.asc">apache-tomee-8.0.5-plus.tar.gz.asc</a>                2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-plus.tar.gz.md5" title="apache-tomee-8.0.5-plus.tar.gz.md5">apache-tomee-8.0.5-plus.tar.gz.md5</a>                2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-plus.tar.gz.sha1" title="apache-tomee-8.0.5-plus.tar.gz.sha1">apache-tomee-8.0.5-plus.tar.gz.sha1</a>               2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-plus.zip" title="apache-tomee-8.0.5-plus.zip">apache-tomee-8.0.5-plus.zip</a>                       2020-11-17 20:23  62744466      
+<a href="apache-tomee-8.0.5-plus.zip.asc" title="apache-tomee-8.0.5-plus.zip.asc">apache-tomee-8.0.5-plus.zip.asc</a>                   2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-plus.zip.md5" title="apache-tomee-8.0.5-plus.zip.md5">apache-tomee-8.0.5-plus.zip.md5</a>                   2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-plus.zip.sha1" title="apache-tomee-8.0.5-plus.zip.sha1">apache-tomee-8.0.5-plus.zip.sha1</a>                  2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-sources.jar" title="apache-tomee-8.0.5-sources.jar">apache-tomee-8.0.5-sources.jar</a>                    2020-11-17 20:23    298329      
+<a href="apache-tomee-8.0.5-sources.jar.asc" title="apache-tomee-8.0.5-sources.jar.asc">apache-tomee-8.0.5-sources.jar.asc</a>                2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-sources.jar.md5" title="apache-tomee-8.0.5-sources.jar.md5">apache-tomee-8.0.5-sources.jar.md5</a>                2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-sources.jar.sha1" title="apache-tomee-8.0.5-sources.jar.sha1">apache-tomee-8.0.5-sources.jar.sha1</a>               2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-webprofile.tar.gz" title="apache-tomee-8.0.5-webprofile.tar.gz">apache-tomee-8.0.5-webprofile.tar.gz</a>              2020-11-17 20:23  43104774      
+<a href="apache-tomee-8.0.5-webprofile.tar.gz.asc" title="apache-tomee-8.0.5-webprofile.tar.gz.asc">apache-tomee-8.0.5-webprofile.tar.gz.asc</a>          2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-webprofile.tar.gz.md5" title="apache-tomee-8.0.5-webprofile.tar.gz.md5">apache-tomee-8.0.5-webprofile.tar.gz.md5</a>          2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-webprofile.tar.gz.sha1" title="apache-tomee-8.0.5-webprofile.tar.gz.sha1">apache-tomee-8.0.5-webprofile.tar.gz.sha1</a>         2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5-webprofile.zip" title="apache-tomee-8.0.5-webprofile.zip">apache-tomee-8.0.5-webprofile.zip</a>                 2020-11-17 20:23  43384339      
+<a href="apache-tomee-8.0.5-webprofile.zip.asc" title="apache-tomee-8.0.5-webprofile.zip.asc">apache-tomee-8.0.5-webprofile.zip.asc</a>             2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5-webprofile.zip.md5" title="apache-tomee-8.0.5-webprofile.zip.md5">apache-tomee-8.0.5-webprofile.zip.md5</a>             2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5-webprofile.zip.sha1" title="apache-tomee-8.0.5-webprofile.zip.sha1">apache-tomee-8.0.5-webprofile.zip.sha1</a>            2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5.jar" title="apache-tomee-8.0.5.jar">apache-tomee-8.0.5.jar</a>                            2020-11-17 20:23     11978      
+<a href="apache-tomee-8.0.5.jar.asc" title="apache-tomee-8.0.5.jar.asc">apache-tomee-8.0.5.jar.asc</a>                        2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5.jar.md5" title="apache-tomee-8.0.5.jar.md5">apache-tomee-8.0.5.jar.md5</a>                        2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5.jar.sha1" title="apache-tomee-8.0.5.jar.sha1">apache-tomee-8.0.5.jar.sha1</a>                       2020-11-17 20:23        40      
+<a href="apache-tomee-8.0.5.pom" title="apache-tomee-8.0.5.pom">apache-tomee-8.0.5.pom</a>                            2020-11-17 20:23     18812      
+<a href="apache-tomee-8.0.5.pom.asc" title="apache-tomee-8.0.5.pom.asc">apache-tomee-8.0.5.pom.asc</a>                        2020-11-17 20:23       163      
+<a href="apache-tomee-8.0.5.pom.md5" title="apache-tomee-8.0.5.pom.md5">apache-tomee-8.0.5.pom.md5</a>                        2020-11-17 20:23        32      
+<a href="apache-tomee-8.0.5.pom.sha1" title="apache-tomee-8.0.5.pom.sha1">apache-tomee-8.0.5.pom.sha1</a>                       2020-11-17 20:23        40      
+		</pre>
+	</main>
+	<hr/>
+</body>
+
+</html>

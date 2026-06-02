@@ -38,6 +38,15 @@ public class Foo extends HttpServlet {
 
     private final AtomicInteger heads = new AtomicInteger();
     private final AtomicInteger gets = new AtomicInteger();
+    private final String section;
+
+    public Foo() {
+        this("fixtures");
+    }
+
+    public Foo(final String section) {
+        this.section = section;
+    }
 
     public int heads() {
         return heads.get();
@@ -86,12 +95,12 @@ public class Foo extends HttpServlet {
         }
 
         final String name = req.getRequestURI().replaceAll(".*/apache-tomee", "apache-tomee").replace("/", "_");
-        URL resource = getClass().getClassLoader().getResource("fixtures/" + name);
+        URL resource = getClass().getClassLoader().getResource(section + "/" + name);
         if (resource == null) {
             // Like a real Nexus: a directory requested without a trailing slash 301-redirects to
             // the slash form (our dir fixtures are stored with a trailing underscore). HttpClient
             // follows it on HEAD and GET, so resolution lands on the listing.
-            if (getClass().getClassLoader().getResource("fixtures/" + name + "_") != null) {
+            if (getClass().getClassLoader().getResource(section + "/" + name + "_") != null) {
                 resp.setStatus(301);
                 resp.setHeader("Location", req.getRequestURL().toString() + "/");
                 return;

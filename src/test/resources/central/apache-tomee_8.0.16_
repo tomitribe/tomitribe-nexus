@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Central Repository: org/apache/tomee/apache-tomee/8.0.16</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+body {
+	background: #fff;
+}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>org/apache/tomee/apache-tomee/8.0.16</h1>
+	</header>
+	<hr/>
+	<main>
+		<pre id="contents">
+<a href="../">../</a>
+<a href="apache-tomee-8.0.16-javadoc.jar" title="apache-tomee-8.0.16-javadoc.jar">apache-tomee-8.0.16-javadoc.jar</a>                   2023-10-29 17:28     51104      
+<a href="apache-tomee-8.0.16-javadoc.jar.asc" title="apache-tomee-8.0.16-javadoc.jar.asc">apache-tomee-8.0.16-javadoc.jar.asc</a>               2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-javadoc.jar.md5" title="apache-tomee-8.0.16-javadoc.jar.md5">apache-tomee-8.0.16-javadoc.jar.md5</a>               2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-javadoc.jar.sha1" title="apache-tomee-8.0.16-javadoc.jar.sha1">apache-tomee-8.0.16-javadoc.jar.sha1</a>              2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-microprofile.tar.gz" title="apache-tomee-8.0.16-microprofile.tar.gz">apache-tomee-8.0.16-microprofile.tar.gz</a>           2023-10-29 17:28  66944212      
+<a href="apache-tomee-8.0.16-microprofile.tar.gz.asc" title="apache-tomee-8.0.16-microprofile.tar.gz.asc">apache-tomee-8.0.16-microprofile.tar.gz.asc</a>       2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-microprofile.tar.gz.md5" title="apache-tomee-8.0.16-microprofile.tar.gz.md5">apache-tomee-8.0.16-microprofile.tar.gz.md5</a>       2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-microprofile.tar.gz.sha1" title="apache-tomee-8.0.16-microprofile.tar.gz.sha1">apache-tomee-8.0.16-microprofile.tar.gz.sha1</a>      2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-microprofile.zip" title="apache-tomee-8.0.16-microprofile.zip">apache-tomee-8.0.16-microprofile.zip</a>              2023-10-29 17:28  67297850      
+<a href="apache-tomee-8.0.16-microprofile.zip.asc" title="apache-tomee-8.0.16-microprofile.zip.asc">apache-tomee-8.0.16-microprofile.zip.asc</a>          2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-microprofile.zip.md5" title="apache-tomee-8.0.16-microprofile.zip.md5">apache-tomee-8.0.16-microprofile.zip.md5</a>          2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-microprofile.zip.sha1" title="apache-tomee-8.0.16-microprofile.zip.sha1">apache-tomee-8.0.16-microprofile.zip.sha1</a>         2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-plume.tar.gz" title="apache-tomee-8.0.16-plume.tar.gz">apache-tomee-8.0.16-plume.tar.gz</a>                  2023-10-29 17:28  79887888      
+<a href="apache-tomee-8.0.16-plume.tar.gz.asc" title="apache-tomee-8.0.16-plume.tar.gz.asc">apache-tomee-8.0.16-plume.tar.gz.asc</a>              2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-plume.tar.gz.md5" title="apache-tomee-8.0.16-plume.tar.gz.md5">apache-tomee-8.0.16-plume.tar.gz.md5</a>              2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-plume.tar.gz.sha1" title="apache-tomee-8.0.16-plume.tar.gz.sha1">apache-tomee-8.0.16-plume.tar.gz.sha1</a>             2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-plume.zip" title="apache-tomee-8.0.16-plume.zip">apache-tomee-8.0.16-plume.zip</a>                     2023-10-29 17:28  80243518      
+<a href="apache-tomee-8.0.16-plume.zip.asc" title="apache-tomee-8.0.16-plume.zip.asc">apache-tomee-8.0.16-plume.zip.asc</a>                 2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-plume.zip.md5" title="apache-tomee-8.0.16-plume.zip.md5">apache-tomee-8.0.16-plume.zip.md5</a>                 2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-plume.zip.sha1" title="apache-tomee-8.0.16-plume.zip.sha1">apache-tomee-8.0.16-plume.zip.sha1</a>                2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-plus.tar.gz" title="apache-tomee-8.0.16-plus.tar.gz">apache-tomee-8.0.16-plus.tar.gz</a>                   2023-10-29 17:28  72067399      
+<a href="apache-tomee-8.0.16-plus.tar.gz.asc" title="apache-tomee-8.0.16-plus.tar.gz.asc">apache-tomee-8.0.16-plus.tar.gz.asc</a>               2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-plus.tar.gz.md5" title="apache-tomee-8.0.16-plus.tar.gz.md5">apache-tomee-8.0.16-plus.tar.gz.md5</a>               2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-plus.tar.gz.sha1" title="apache-tomee-8.0.16-plus.tar.gz.sha1">apache-tomee-8.0.16-plus.tar.gz.sha1</a>              2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-plus.zip" title="apache-tomee-8.0.16-plus.zip">apache-tomee-8.0.16-plus.zip</a>                      2023-10-29 17:28  72416566      
+<a href="apache-tomee-8.0.16-plus.zip.asc" title="apache-tomee-8.0.16-plus.zip.asc">apache-tomee-8.0.16-plus.zip.asc</a>                  2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-plus.zip.md5" title="apache-tomee-8.0.16-plus.zip.md5">apache-tomee-8.0.16-plus.zip.md5</a>                  2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-plus.zip.sha1" title="apache-tomee-8.0.16-plus.zip.sha1">apache-tomee-8.0.16-plus.zip.sha1</a>                 2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-sources.jar" title="apache-tomee-8.0.16-sources.jar">apache-tomee-8.0.16-sources.jar</a>                   2023-10-29 17:28    322914      
+<a href="apache-tomee-8.0.16-sources.jar.asc" title="apache-tomee-8.0.16-sources.jar.asc">apache-tomee-8.0.16-sources.jar.asc</a>               2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-sources.jar.md5" title="apache-tomee-8.0.16-sources.jar.md5">apache-tomee-8.0.16-sources.jar.md5</a>               2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-sources.jar.sha1" title="apache-tomee-8.0.16-sources.jar.sha1">apache-tomee-8.0.16-sources.jar.sha1</a>              2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-webprofile.tar.gz" title="apache-tomee-8.0.16-webprofile.tar.gz">apache-tomee-8.0.16-webprofile.tar.gz</a>             2023-10-29 17:28  49791450      
+<a href="apache-tomee-8.0.16-webprofile.tar.gz.asc" title="apache-tomee-8.0.16-webprofile.tar.gz.asc">apache-tomee-8.0.16-webprofile.tar.gz.asc</a>         2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-webprofile.tar.gz.md5" title="apache-tomee-8.0.16-webprofile.tar.gz.md5">apache-tomee-8.0.16-webprofile.tar.gz.md5</a>         2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-webprofile.tar.gz.sha1" title="apache-tomee-8.0.16-webprofile.tar.gz.sha1">apache-tomee-8.0.16-webprofile.tar.gz.sha1</a>        2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16-webprofile.zip" title="apache-tomee-8.0.16-webprofile.zip">apache-tomee-8.0.16-webprofile.zip</a>                2023-10-29 17:28  50114427      
+<a href="apache-tomee-8.0.16-webprofile.zip.asc" title="apache-tomee-8.0.16-webprofile.zip.asc">apache-tomee-8.0.16-webprofile.zip.asc</a>            2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16-webprofile.zip.md5" title="apache-tomee-8.0.16-webprofile.zip.md5">apache-tomee-8.0.16-webprofile.zip.md5</a>            2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16-webprofile.zip.sha1" title="apache-tomee-8.0.16-webprofile.zip.sha1">apache-tomee-8.0.16-webprofile.zip.sha1</a>           2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16.jar" title="apache-tomee-8.0.16.jar">apache-tomee-8.0.16.jar</a>                           2023-10-29 17:28     12638      
+<a href="apache-tomee-8.0.16.jar.asc" title="apache-tomee-8.0.16.jar.asc">apache-tomee-8.0.16.jar.asc</a>                       2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16.jar.md5" title="apache-tomee-8.0.16.jar.md5">apache-tomee-8.0.16.jar.md5</a>                       2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16.jar.sha1" title="apache-tomee-8.0.16.jar.sha1">apache-tomee-8.0.16.jar.sha1</a>                      2023-10-29 17:28        40      
+<a href="apache-tomee-8.0.16.pom" title="apache-tomee-8.0.16.pom">apache-tomee-8.0.16.pom</a>                           2023-10-29 17:28     33102      
+<a href="apache-tomee-8.0.16.pom.asc" title="apache-tomee-8.0.16.pom.asc">apache-tomee-8.0.16.pom.asc</a>                       2023-10-29 17:28       273      
+<a href="apache-tomee-8.0.16.pom.md5" title="apache-tomee-8.0.16.pom.md5">apache-tomee-8.0.16.pom.md5</a>                       2023-10-29 17:28        32      
+<a href="apache-tomee-8.0.16.pom.sha1" title="apache-tomee-8.0.16.pom.sha1">apache-tomee-8.0.16.pom.sha1</a>                      2023-10-29 17:28        40      
+		</pre>
+	</main>
+	<hr/>
+</body>
+
+</html>
