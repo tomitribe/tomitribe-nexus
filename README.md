@@ -29,7 +29,7 @@ try (Stream<Path> tree = Files.walk(version)) {
 <dependency>
   <groupId>org.tomitribe.nexus</groupId>
   <artifactId>tomitribe-nexus</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 
