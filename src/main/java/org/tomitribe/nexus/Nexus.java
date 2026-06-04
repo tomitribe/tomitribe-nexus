@@ -97,7 +97,7 @@ public final class Nexus {
             }
 
             final HttpClient client = new HttpClient(builder.build());
-            final NexusFileSystem fs = new NexusFileSystem(new NexusFileSystemProvider(), baseUri, client);
+            final NexusFileSystem fs = new NexusFileSystem(new NexusFileSystemProvider(), baseUri, client, username);
             return fs.root();
         }
     }

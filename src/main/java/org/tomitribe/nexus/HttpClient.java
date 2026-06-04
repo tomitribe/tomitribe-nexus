@@ -25,6 +25,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.time.Instant;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 /**
  * The narrow HTTP surface the filesystem needs: a streaming GET and a HEAD.
@@ -33,7 +36,7 @@ import java.util.Date;
  *
  * <p>Connection discipline matters: Apache HttpClient pools a small number of connections
  * per route (2 by default) and only returns one to the pool when its response is fully
- * consumed or closed. {@link #head(URI)} extracts the headers it needs and closes the
+ * consumed or closed. {@link #head(URI)} captures the response headers and closes the
  * response itself, so a HEAD never leaks a connection. {@link #get(URI)} streams, so the
  * caller owns the returned response and must close it (closing the entity stream releases
  * the connection) — and must consume it on the error path too.
@@ -56,34 +59,20 @@ class HttpClient implements Closeable {
     }
 
     /**
-     * Issues a HEAD and returns just the headers we care about, releasing the connection
-     * before returning — so no caller can leak it.
+     * Issues a HEAD and returns its status and headers, releasing the connection before
+     * returning — so no caller can leak it. All headers are captured because the server
+     * type (e.g. {@code Server: Nexus/2.x}) changes how a response is interpreted.
      */
     public Head head(final URI uri) throws IOException {
         final HttpHead request = new HttpHead(uri);
         request.setHeader("User-Agent", USER_AGENT);
         try (final CloseableHttpResponse response = client.execute(request)) {
-            return new Head(
-                    response.getStatusLine().getStatusCode(),
-                    value(response, "Content-Type"),
-                    parseLong(value(response, "Content-Length")),
-                    parseDate(value(response, "Last-Modified")));
+            final Map<String, String> headers = new HashMap<>();
+            for (final Header header : response.getAllHeaders()) {
+                headers.put(header.getName().toLowerCase(Locale.ROOT), header.getValue());
+            }
+            return new Head(response.getStatusLine().getStatusCode(), headers);
         }
-    }
-
-    private static String value(final CloseableHttpResponse response, final String name) {
-        final Header header = response.getFirstHeader(name);
-        return header == null ? null : header.getValue();
-    }
-
-    private static Long parseLong(final String value) {
-        return value == null ? null : Long.parseLong(value);
-    }
-
-    private static Instant parseDate(final String value) {
-        if (value == null) return null;
-        final Date date = DateUtils.parseDate(value);
-        return date == null ? null : date.toInstant();
     }
 
     @Override
@@ -91,11 +80,41 @@ class HttpClient implements Closeable {
         client.close();
     }
 
-    /** The handful of header values a HEAD needs to surface; the connection is already released. */
-    record Head(int status, String contentType, Long contentLength, Instant lastModified) {
+    /** A HEAD's status and headers (lower-cased names); the connection is already released. */
+    record Head(int status, Map<String, String> headers) {
+
+        String header(final String name) {
+            return headers.get(name.toLowerCase(Locale.ROOT));
+        }
+
+        String contentType() {
+            return header("Content-Type");
+        }
+
+        String server() {
+            return header("Server");
+        }
+
+        Long contentLength() {
+            final String value = header("Content-Length");
+            return value == null ? null : Long.parseLong(value);
+        }
+
+        Instant lastModified() {
+            final String value = header("Last-Modified");
+            if (value == null) return null;
+            final Date date = DateUtils.parseDate(value);
+            return date == null ? null : date.toInstant();
+        }
 
         boolean isHtml() {
+            final String contentType = contentType();
             return contentType != null && contentType.contains("text/html");
+        }
+
+        boolean isNexus2() {
+            final String server = server();
+            return server != null && server.startsWith("Nexus/2");
         }
     }
 }

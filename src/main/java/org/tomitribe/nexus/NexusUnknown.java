@@ -63,7 +63,7 @@ final class NexusUnknown extends NexusPath {
         final NexusPath discovered;
         if (head.status() == 404) {
             discovered = new NexusMissing(fs, names, absolute);
-        } else if (head.isHtml()) {
+        } else if (isDirectory(head)) {
             discovered = new NexusDir(fs, names, absolute);
         } else {
             discovered = new NexusFile(fs, names, absolute, head.contentLength(), head.lastModified());
@@ -71,6 +71,18 @@ final class NexusUnknown extends NexusPath {
 
         resolved.compareAndSet(null, discovered);
         return resolved.get();
+    }
+
+    private static boolean isDirectory(final HttpClient.Head head) {
+        // Nexus 2 quirk: a directory HEAD is 200 with NO Content-Type and Content-Length: 0,
+        // whereas a file always carries a content type and a non-zero length. Pin this to the
+        // Server header so we don't misread a genuinely empty, typeless file elsewhere.
+        if (head.isNexus2()) {
+            return head.contentType() == null && (head.contentLength() == null || head.contentLength() == 0L);
+        }
+
+        // Autoindex/Central/Nexus 3 serve a directory listing as text/html.
+        return head.isHtml();
     }
 
     @Override

@@ -34,11 +34,13 @@ final class NexusFileSystem extends FileSystem {
     private final NexusFileSystemProvider provider;
     private final URI baseUri;
     private final HttpClient client;
+    private final String username;
 
-    NexusFileSystem(final NexusFileSystemProvider provider, final URI baseUri, final HttpClient client) {
+    NexusFileSystem(final NexusFileSystemProvider provider, final URI baseUri, final HttpClient client, final String username) {
         this.provider = provider;
         this.baseUri = Objects.requireNonNull(baseUri, "baseUri");
         this.client = Objects.requireNonNull(client, "client");
+        this.username = username;
     }
 
     URI baseUri() {
@@ -123,5 +125,18 @@ final class NexusFileSystem extends FileSystem {
     @Override
     public WatchService newWatchService() {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public String toString() {
+        if (username != null) {
+            return "NexusFileSystem{" +
+                    "baseUri='" + baseUri +
+                    "', username='" + username +
+                    "'}";
+        }
+        return "NexusFileSystem{" +
+                "baseUri='" + baseUri +
+                "'}";
     }
 }
