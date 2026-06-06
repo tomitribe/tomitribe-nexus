@@ -21,20 +21,45 @@ import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.nio.file.WatchService;
 import java.nio.file.attribute.UserPrincipalLookupService;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
 /**
- * DRAFT — a read-only NIO FileSystem whose root {@code /} is the Nexus base URI.
+ * A read-only NIO FileSystem whose root {@code /} is the Nexus base URI.
+ *
+ * <p>Holds a small, bounded attribute cache so the natural relativize → resolve round-trip
+ * (and any re-addressing of a path we already listed) avoids a redundant HEAD. The cache lives
+ * here, on the filesystem — not on the paths — so paths stay pure addresses and the address
+ * algebra has no metadata to lose. {@link NexusDir#listChildren} populates it; {@code resolve}
+ * on a {@link NexusUnknown} consults it before reaching for the network.
+ *
+ * <p>It is a FIFO ("rolling") window of the most recent {@value #CACHE_CAPACITY} entries — sized
+ * to the working set of a crawl (a directory's worth of children, consumed moments after listing),
+ * so it stays flat regardless of how large the repository is.
  */
 final class NexusFileSystem extends FileSystem {
+
+    private static final int CACHE_CAPACITY = 4096;
 
     private final NexusFileSystemProvider provider;
     private final URI baseUri;
     private final HttpClient client;
     private final String username;
+
+    /** Absolute path names → what a listing (or a prior HEAD) told us. Bounded, FIFO, thread-safe. */
+    private final Map<List<String>, CacheEntry> attributes = Collections.synchronizedMap(
+            new LinkedHashMap<>(CACHE_CAPACITY + 1, 0.75f, false) {
+                @Override
+                protected boolean removeEldestEntry(final Map.Entry<List<String>, CacheEntry> eldest) {
+                    return size() > CACHE_CAPACITY;
+                }
+            });
 
     NexusFileSystem(final NexusFileSystemProvider provider, final URI baseUri, final HttpClient client, final String username) {
         this.provider = provider;
@@ -49,6 +74,20 @@ final class NexusFileSystem extends FileSystem {
 
     HttpClient client() {
         return client;
+    }
+
+    /** Record what we learned about an absolute address; later re-addressing of it skips the HEAD. */
+    void remember(final List<String> names, final CacheEntry entry) {
+        attributes.put(List.copyOf(names), entry);
+    }
+
+    /** What we know about an absolute address, or {@code null} if we've never seen it. */
+    CacheEntry recall(final List<String> names) {
+        return attributes.get(names);
+    }
+
+    /** Immutable attribute snapshot from a listing or HEAD; {@code size == null} marks a directory. */
+    record CacheEntry(boolean directory, Long size, Instant modified) {
     }
 
     Path root() {

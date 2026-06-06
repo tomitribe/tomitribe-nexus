@@ -57,6 +57,12 @@ final class NexusUnknown extends NexusPath {
         final NexusPath current = resolved.get();
         if (current != null) return current;
 
+        final NexusPath cached = fromCache();
+        if (cached != null) {
+            resolved.compareAndSet(null, cached);
+            return resolved.get();
+        }
+
         // head() releases the connection itself — no leak even though we discard the rest.
         final HttpClient.Head head = fs.client().head(toRemoteUri());
 
@@ -65,12 +71,23 @@ final class NexusUnknown extends NexusPath {
             discovered = new NexusMissing(fs, names, absolute);
         } else if (isDirectory(head)) {
             discovered = new NexusDir(fs, names, absolute);
+            fs.remember(names, new NexusFileSystem.CacheEntry(true, null, head.lastModified()));
         } else {
             discovered = new NexusFile(fs, names, absolute, head.contentLength(), head.lastModified());
+            fs.remember(names, new NexusFileSystem.CacheEntry(false, head.contentLength(), head.lastModified()));
         }
 
         resolved.compareAndSet(null, discovered);
         return resolved.get();
+    }
+
+    /** If a listing (or a prior HEAD) already told us about this exact address, rebuild it — no HEAD. */
+    private NexusPath fromCache() {
+        final NexusFileSystem.CacheEntry entry = fs.recall(names);
+        if (entry == null) return null;
+        return entry.directory()
+                ? new NexusDir(fs, names, absolute, entry.modified())
+                : new NexusFile(fs, names, absolute, entry.size(), entry.modified());
     }
 
     private static boolean isDirectory(final HttpClient.Head head) {

@@ -107,9 +107,11 @@ final class NexusDir extends NexusPath {
             if (name.endsWith("/")) {
                 childNames.add(name.substring(0, name.length() - 1));
                 children.add(new NexusDir(fs, childNames, true, node.getModified()));
+                fs.remember(childNames, new NexusFileSystem.CacheEntry(true, null, node.getModified()));
             } else {
                 childNames.add(name);
                 children.add(new NexusFile(fs, childNames, true, node.getSize(), node.getModified()));
+                fs.remember(childNames, new NexusFileSystem.CacheEntry(false, node.getSize(), node.getModified()));
             }
         }
         return children;

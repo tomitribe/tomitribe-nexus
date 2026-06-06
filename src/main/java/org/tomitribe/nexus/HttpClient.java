@@ -28,6 +28,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * The narrow HTTP surface the filesystem needs: a streaming GET and a HEAD.
@@ -48,11 +49,14 @@ class HttpClient implements Closeable {
 
     private final CloseableHttpClient client;
 
+    public static final Logger LOGGER = Logger.getLogger(HttpClient.class.getName());
+
     public HttpClient(final CloseableHttpClient client) {
         this.client = client;
     }
 
     public CloseableHttpResponse get(final URI uri) throws IOException {
+        LOGGER.fine("GET " + uri);
         final HttpGet request = new HttpGet(uri);
         request.setHeader("User-Agent", USER_AGENT);
         return client.execute(request);
@@ -64,6 +68,7 @@ class HttpClient implements Closeable {
      * type (e.g. {@code Server: Nexus/2.x}) changes how a response is interpreted.
      */
     public Head head(final URI uri) throws IOException {
+        LOGGER.fine("HEAD " + uri);
         final HttpHead request = new HttpHead(uri);
         request.setHeader("User-Agent", USER_AGENT);
         try (final CloseableHttpResponse response = client.execute(request)) {
