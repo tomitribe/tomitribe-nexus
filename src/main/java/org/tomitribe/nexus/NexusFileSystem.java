@@ -43,7 +43,7 @@ import java.util.Set;
  * to the working set of a crawl (a directory's worth of children, consumed moments after listing),
  * so it stays flat regardless of how large the repository is.
  */
-final class NexusFileSystem extends FileSystem {
+public final class NexusFileSystem extends FileSystem {
 
     private static final int CACHE_CAPACITY = 4096;
 
@@ -70,6 +70,14 @@ final class NexusFileSystem extends FileSystem {
 
     URI baseUri() {
         return baseUri;
+    }
+
+    public URI getUri() {
+        return baseUri;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     HttpClient client() {
